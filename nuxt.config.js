@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'buzhi',
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '步知社区' }
+      { hid: 'description', name: 'description', content: '步知公考社区是学习和交流氛围非常好的公务员考试论坛和公务员论坛，你可以在这里和公考领域厉害的大咖老师贴身学习，还可以认识更多志同道合的备考小伙伴，交流学习经验与备考故事' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

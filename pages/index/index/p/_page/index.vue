@@ -187,8 +187,8 @@
 import mAlert from "~/components/m-alert";
 import mSider from "~/components/m-sider/sider";
 export default {
-  head() {
-    title: "最具品质的公务员考试论坛";
+  head: {
+    title: '步知公考社区 - 最具品质的公务员考试论坛'
   },
   data() {
     return {
