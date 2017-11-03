@@ -21,18 +21,18 @@ export default {};
 .hd-search {
   height: 36px;
   line-height: 36px;
-  border-top: @border-w solid @color-border;
-  border-bottom: @border-w solid @color-border;
+  border-top: @border-w solid @color-gray-bd;
+  border-bottom: @border-w solid @color-gray-bd;
   background: @color-white;
   font-size: @f14;
 }
 .bread-crumbs {
   float: left;
   &:hover {
-    color: @color-blue-l;
+    color: @color-blue;
   }
   .bread-item {
-    color: @color-normal;
+    color: @color-gray-l;
   }
   .icon-home{
       float:left;
@@ -55,14 +55,14 @@ export default {};
     padding-right: 38px;
     height: 22px;
     line-height: 22px;
-    border: @border-w/2 solid @color-border;
+    border: @border-w/2 solid @color-gray-bd;
     border-radius: 4px;
     text-indent: 26px;
     font-size: @f12;
-    background: @color-gray;
+    background: @color-gray-bg;
     &:focus {
       background-color: @color-white;
-      border-color: @color-blue-l
+      border-color: @color-blue;
     }
   }
   .icon-search {

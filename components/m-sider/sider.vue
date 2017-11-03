@@ -128,6 +128,7 @@
         </div>
         <div class="tab-article-con" style="overflow:hidden;">
             <ul class="clearfix tab-container">
+                <!-- <transition-group name="slide-top"> -->
                 <li class="tab-article-item">
                     <ul class="tab-article-container">
                         <li class="article-detail">
@@ -150,7 +151,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="tab-article-item" style="float: left;width: 246px;">
+                <li class="tab-article-item">
                     <ul class="tab-article-container">
                         <li class="article-detail">
                         <a href="#">
@@ -172,6 +173,7 @@
                         </li>
                     </ul>
                 </li>
+                <!-- </transiton-group> -->
             </ul>
         </div>
     </div>
@@ -203,7 +205,7 @@ export default {
 .avater-detail {
     padding-top: 20px;
     padding-bottom: 4px;
-    border-bottom: @border-w solid @color-border;
+    border-bottom: @border-w solid @color-gray-bd;
     .avatar-header {
         padding: 0 28px;
         .avatar-pic {
@@ -211,7 +213,7 @@ export default {
             position: relative;
             width: 78px;
             height: 78px;
-            border: @border-w solid @color-border;
+            border: @border-w solid @color-gray-bd;
             border-radius: 50%;
             overflow: hidden;
             img {
@@ -226,7 +228,7 @@ export default {
             text-align: center;
             font-size: 14px;
             line-height: 14px;
-            color: #333;
+            color: @color-gray-b;
             img {
                 margin-left: 3px;
                 height: 14px;
@@ -238,7 +240,7 @@ export default {
         .avatar-motto {
             font-size: 12px;
             line-height: 18px;
-            color: #888;
+            color: @color-gray-l;
             text-align: center;
         }
     }
@@ -264,7 +266,7 @@ export default {
     .nums-item {
         float: left;
         width: 80px;
-        border-right:@border-w solid @color-border;
+        border-right:@border-w solid @color-gray-bd;
         text-align: center;
         &:last-child{
             border-right:0 none;
@@ -274,17 +276,16 @@ export default {
         font-size: 16px;
         line-height: 16px;
         font-weight: bold;
-        color: #2d3e50;
+        color: @color-theme;
         }
         .label {
         font-size: 14px;
         line-height: 14px;
-        color: #888;
+        color: @color-gray-l;
         }
         &:hover .label {
-            color: #2996eb;
+            color: @color-blue-l;
         }
-
     }
 }
 .sider-qiandao {
@@ -292,7 +293,7 @@ export default {
     height: 58px;
     line-height: 58px;
     text-indent: 10px;
-    color: #888888;
+    color: @color-gray-l;
     font-size: 14px;
     overflow: visible;
     .qiandao-btn {
@@ -303,14 +304,14 @@ export default {
         height: 58px;
         line-height: 58px;
         text-align: center;
-        border: 2px solid #1879c5;
-        background: #2996eb;
+        border: 2px solid @color-blue;
+        background: @color-blue-l;
         border-radius: 4px;
         text-indent: 0;
         font-size: 18px;
-        color: #ffffff;
+        color: @color-white;
         &:hover {
-        background: #1879c5;
+            background: @color-blue;
         }
     }
 }
@@ -326,10 +327,10 @@ export default {
         padding: 10px 0 12px;
         height: 36px;
         line-height: 14px;
-        background: #1879c5;
+        background: @color-blue;
         font-size: 14px;
         a {
-            color: #fff;
+            color: @color-white;
         }
         .strong {
             display: block;
@@ -348,12 +349,12 @@ export default {
         border-bottom: 1px dashed #ddd;
         margin-top: 15px;
         font-size: 16px;
-        color: #888;
+        color: @color-gray-l;
         margin-left: 10px;
         margin-right: 10px;
         padding-bottom: 12px;
         .iconfont {
-            font-size:@f20;
+            font-size:@f22;
             font-weight:bold;
             margin-right: 10px;
             vertical-align:middle;
@@ -369,7 +370,7 @@ export default {
             line-height: 24px;
             text-align: center;
             width: 24px;
-            color: #eb5255;
+            color: @color-red-l;
             font-size: 20px;
             vertical-align: middle;
         }
@@ -420,13 +421,13 @@ export default {
             height: 16px;
             line-height: 16px;
             text-align: center;
-            border: 2px solid #2996eb;
+            border: 2px solid @color-blue-l;
             border-radius: 4px;
             font-size: 12px;
-            color: #2996eb;
+            color: @color-blue-l;
             &:hover {
-                background: #2996eb;
-                color: #fff;
+                background: @color-blue-l;
+                color: @color-white;
             }
         }
     }
@@ -443,10 +444,10 @@ export default {
         border: 2px solid #c1d6e8;
         border-radius: 4px;
         font-size: 14px;
-        color: #2d3e50;
+        color: @color-theme;
         &:hover {
             background: #e9f4fd;
-            border-color: #2996eb;
+            border-color: @color-blue-l;
         }
         .detail-txt {
             margin-left: 5px;
@@ -485,7 +486,7 @@ export default {
         left: 6px;
         margin-top: 4px;
         margin-bottom: 25px;
-        color: #2d3e50;
+        color: @color-theme;
         font-weight: bold;
         .num {
             float: left;
@@ -531,7 +532,7 @@ export default {
     .countdown-btn-can {
         background: #eb5255;
         border-color: #c64446;
-        color: #fff;
+        color: @color-white;
     }
 
 
@@ -560,42 +561,44 @@ export default {
     padding: 4px 0;
     height: 32px;
     line-height: 32px;
-    border-bottom: 2px solid #d9d9d9;
+    border-bottom: 2px solid @color-gray-bd;
     .tab-title-item {
         float: left;
         width: 80px;
         text-align: center;
         font-size: 14px;
         color: #333;
+        position:relative;
+        &:after{
+            content:'';
+            position: absolute;
+            right:0;
+            top:0;
+            height: 32px;
+            width: 2px;
+            background-color:@color-gray-bg;
+        }
+        &:last-child:after{
+            width:0;
+        }
         a{
             display: block;
             &:hover{
                 font-weight: bold;
-                color: #1879c5;
+                color: @color-blue;
             }
 
         }
         &.active {
             font-weight: bold;
-            color: #1879c5;
+            color: @color-blue;
             a {
                 font-weight: bold;
-                color: #1879c5;
+                color: @color-blue;
             }
-
         }
-
     }
-
-
 }
-.tab-title-divider {
-  float: left;
-  height: 32px;
-  width: 0;
-  border-left: 2px solid #eee;
-}
-
 .tab-article-con {
     overflow: hidden;
     .tab-container {
@@ -614,7 +617,7 @@ export default {
             position: relative;
             &:last-child {
                 border-bottom: none;
-                border-color: #fff;
+                border-color: @color-white;
             }
             a {
                 display: block;
@@ -650,7 +653,7 @@ export default {
             p {
             line-height: 20px;
             font-size: 13px;
-            color: #888;
+            color: @color-gray-l;
             font-weight: normal;
             }
 

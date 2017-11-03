@@ -26,14 +26,15 @@
 export default {};
 </script>
 <style lang="less" scoped>
+@import '~assets/style/variable.less';
 #elevator {
   position: fixed;
   right: 6px;
   bottom: 200px;
   width: 60px;
-  z-index: 9999;
+  z-index: 9;
   a {
-    color: #fff;
+    color: @color-white;
     font-size: 12px;
     position: relative;
     display: block;
@@ -42,11 +43,11 @@ export default {};
     height: 30px;
     line-height: 16px;
     text-align: center;
-    background: #ffffff;
+    background: @color-white;
     &:hover {
       span {
         display: block;
-        color: #2996eb;
+        color: @color-blue-ll;
       }
       i {
         display: none;
@@ -54,7 +55,7 @@ export default {};
       .elevator-layer-phone {
         left: -161px;
         width: 158px;
-        border: 1px solid #dddddd;
+        border: @border-w/2 solid @color-gray-bd;
       }
       .elevator-layer-weixin {
         transform: scale(1);
@@ -84,11 +85,11 @@ export default {};
   }
   .elevator-service {
     padding: 15px;
-    background: #1879c5;
+    background: @color-blue-ll;
     border-radius: 4px;
     &:hover {
       span {
-        color: #fff;
+        color: @color-white;
       }
     }
     .elevator-icon-service::after {
@@ -112,15 +113,15 @@ export default {};
   }
   .item-container {
     margin-top: 5px;
-    border: 1px solid #dddddd;
+    border: @border-w/2 solid @color-gray-bd;
     border-radius: 4px;
     .first-item {
-      border-bottom: 1px solid #edf0f5;
+      border-bottom: 1px solid @color-gray-bg;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
     }
     .last-item {
-      border-top: 1px solid #edf0f5;
+      border-top: 1px solid @color-gray-bg;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
     }
@@ -137,10 +138,10 @@ export default {};
       width: 0;
       height: 58px;
       line-height: 58px;
-      background: #fff;
+      background: @color-white;
       text-align: center;
       font-size: 16px;
-      color: #888;
+      color: @color-gray-l;
       transition: width 0.5s, left 0.5s;
       overflow: hidden;
     }
@@ -170,8 +171,8 @@ export default {};
       height: 176px;
       text-align: center;
       line-height: 176px;
-      background: #fff;
-      border: 1px solid #ddd;
+      background: @color-white;
+      border: @border-w/2 solid @color-gray-bd;
       border-radius: 4px;
       background-image: url("~assets/images/bzgkfwh.jpg");
       background-repeat: no-repeat;

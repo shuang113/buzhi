@@ -15,18 +15,19 @@
  export default {}
 </script>
 <style lang="less" scoped>
+@import '~assets/style/variable.less';
 .fd{
-    background:#414141;
+    background:@color-gray;
     padding:27px 0 21px 0;
     .fd-container{
         text-align:center;
-        color:#999;
+        color:@color-gray-l;
     }
     a{
         display:inline-block;
-        color:#999;
+        color:@color-gray-l;
         &:hover{
-            color:#9e2b2d;
+            color:@color-red;
         }
     }
     span{

@@ -68,7 +68,7 @@ export default {
   padding:0 30px;
   height: 70px;
   line-height: 70px;
-  background: @color-top-bg;
+  background: @color-theme;
   font-size: 18px;
   color: @color-white;
   a{
@@ -114,7 +114,7 @@ export default {
   font-size: @f14;
   cursor: pointer;
   &.active{
-    background: @color-drop-active;
+    background: @color-theme-l;
   }
   &::after{
     content:"";
@@ -140,7 +140,7 @@ export default {
       height: 32px;
       vertical-align: top;
       border-radius: 50%;
-      border: @border-w solid #71828b;
+      border: @border-w solid @color-blue-t;
       overflow: hidden;
     }
     .num-label {
@@ -152,7 +152,7 @@ export default {
       height:16px;
       line-height:16px;
       border-radius: 8px;
-      border: @border-w solid @color-red-b;
+      border: @border-w solid @color-red;
       background: @color-red-l;
       color: @color-white;
       font-size: @f12;
@@ -172,7 +172,7 @@ export default {
     left: 0;
     width: 100%;
     padding: 15px 0;
-    background: @color-drop-active;
+    background: @color-theme-l;
     border-radius:0 0 6px 6px;
     li{
       height: 34px;
@@ -180,11 +180,11 @@ export default {
       font-size: @f16;
       padding-left:16px;
       &:hover {
-        background: @color-strong;
+        background: @color-theme;
       }
     }
     .iconfont{
-      font-size:@f20;
+      font-size:@f22;
       color:@color-blue-t;
       margin-right:13px;
     }
@@ -197,8 +197,8 @@ export default {
   z-index:1;
   width: 100%;
   height:126px;
-  border-top: @border-w solid @color-border;
-  border-bottom: @border-w solid @color-border;
+  border-top: @border-w solid @color-gray-bd;
+  border-bottom: @border-w solid @color-gray-bd;
   background-color: @color-white;
   .drop-container {
     margin: 0 auto;
