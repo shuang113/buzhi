@@ -36,8 +36,8 @@
                 <img src="~static/images/default-avatar.png">
                 <span class="num-label">121</span>
             </div>
-            <span class="avatar-name">秋闱长达<i class="icon-daosanjiao"></i></span>
-            <transition name="drop-down">
+            <span class="avatar-name">{{userinfo.name}}<i class="icon-daosanjiao"></i></span>
+            <transition name="slide-right">
               <ul class="avater-menu" v-show="isShow">
                   <li><a href="#" target="_blank"><i class="iconfont icon-xinxi"></i>消息系统<span>(2)</span></a></li>
                   <li><a href="#"><i class="iconfont icon-center"></i>个人中心<span></span></a></li>
@@ -53,7 +53,11 @@ export default {
   data() {
     return {
       isShow: false,
-      isShowSelf:false
+      isShowSelf:false,
+      userinfo:{
+        "name":"hes",
+        "client_id":"152346"
+      }
     }
   },
   methods:{

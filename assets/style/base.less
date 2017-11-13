@@ -87,8 +87,15 @@ body{
   color:#999;
 }
 .drop-down-enter-active,.drop-down-leave-active{
-  transition: all .5s;
+  transition: all .3s;
 }
-.drop-down-enter, .drop-down-leave-active{
-  transform:translateX(150%);
+.drop-down-enter,.drop-down-leave-active{
+  transform:scaleY(0);
+  transform-origin:center top;
+}
+.slide-right-enter-active,.slide-right-leave-active{
+  transition:all .5s;
+}
+.slide-right-enter,.slide-right-leave-active{
+  transform:translateX(200%);
 }

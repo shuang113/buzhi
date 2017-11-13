@@ -21,7 +21,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // vendor: ['axios'],
+    vendor: ['axios'],
   },
   router: {
     extendRoutes (routes) {

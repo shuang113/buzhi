@@ -32,7 +32,7 @@ export default {};
     color: @color-blue;
   }
   .bread-item {
-    color: @color-gray-l;
+    color: @color-gray;
   }
   .icon-home{
       float:left;

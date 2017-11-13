@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<m-header/>
+		<bz-header/>
 		<div class="notfound">
 			<div class="notfound-link">
 				<p class="notfound-num">404</p>
@@ -14,14 +14,14 @@
 	</div>
 </template>
 <script>
-import MHeader from '~/components/m-header'
+import BzHeader from '~/components/common/header'
 export default {
 	head: {
     title: "步知公考社区 - 最具品质的公务员考试论坛"
   },
   props: ["error"],
 	components:{
-		MHeader
+		BzHeader
 	}
 };
 </script>
