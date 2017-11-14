@@ -3,18 +3,18 @@
     <div class="ask-content">
         <!--社区首页内容 板块选择-->
         <div class="hd-block content-hd">
-          <div class="header">版块</div>
+          <div class="header" @click="clickItem(2)">版块</div>
           <ul class="module-row clearfix">
-            <li class="active"><a href="/">全部帖子</a></li>
-            <li v-for="(item,index) in forumlist" :key="index" v-if="index < 7">
-              <router-link :to="{name: 'forum-id', params: {id: item.id}}">{{item.title}}</router-link>
+            <li class="active"><router-link tag="span" to="/">帖子</router-link></li>
+            <li v-for="(item,index) in forumlist.data" :key="index" v-if="index < 7">
+              <span @click="selectItem(item)">{{item.title}}</span>
             </li>
           </ul>
         </div>
         <!-- 广告 -->
         <div class="adv-bar">
           <a href="#" target="_blank">
-            <img src="http://gkimg.cdn.midasjoy.com/Uploads/picture/20171111/5a06a5b4f0b43.jpg">
+            <img src="images/default-avatar.png">
           </a>
         </div>
         <!--社区首页内容 帖子列表-->
@@ -79,26 +79,75 @@
 <script>
 import axios from "axios"
 import BzListview from "~/components/common/listview"
+import {getForumCate,getForumList} from "~/plugins/api"
 export default {
-  head: {
-    title: "步知公考社区 - 最具品质的公务员考试论坛"
+  head() {
+    return {
+      title: `步知公考社区 - 最具品质的公务员考试论坛`
+    }
   },
-  async asyncData ({ params }) {
-    let { data } = await axios.get('http://ask.gk.buzhi.com/api?router=thread.forum')
-    return { forumlist: data.data}
+  // async asyncData ({ params }) {
+  //   let { data } = await axios.get('http://ask.gk.buzhi.com/api?router=thread.forum')
+  //   return { forumlist: data.data}
+  // },
+  async asyncData ({ params, error }) {
+    return axios.all([
+      getForumCate(),
+      getForumList({"fid":"","p":"1"})
+    ])
+    .then(axios.spread(function (forum, applist) {
+      return {
+        forumlist: forum.data,
+        datalist: applist.data
+      }
+    }))
+    .catch(error => console.log(error))
+  },
+  mounted () {
+    console.log(this.forumlist.data)
   },
   data() {
     return {
       isShow: true,
-      forumlist: {}
+      forumlist: {},
+      datalist:{}
     };
   },
   components: {
     BzListview,
   },
   methods: {
-    _tab(index) {
-      this.currentIndex = index
+    // _tab(index) {
+    //   this.currentIndex = index
+    // },
+    selectItem(item){
+      this.$router.push({
+        path: `/forum/${item.id}`
+      })
+    },
+    clickItem(pageSize){
+      this._getForumList(pageSize);
+    },
+    _getForumList(pageSize){
+        getForumList({
+          "fid":"5",
+          "p":pageSize
+        }).then(res=>{
+          console.log(res.data)
+        }).catch(err=>{
+          console.log(err)
+        })
+          // axios.get('http://localhost:3000/api?router=thread.appLists',{
+          //   params:{
+          //     'fid':'5',
+          //     'p':pageSize,
+          //     "limit":'10'
+          //   }
+          // }).then(response=>{
+          //   console.log(response.data)
+          // }).catch(err=>{
+          //   console.log(err)
+          // })
     }
   }
   
@@ -153,16 +202,17 @@ export default {
       line-height: 28px;
       text-align: center;
       font-size: 14px;
-      a {
+      span{
         display: block;
         height:100%;
         color: @color-gray;
         border: @border-w solid #c1d6e8;
         background: #e9f4fd;
         border-radius: @border-w*2;
+        cursor: pointer;
       }
-      &.active a,
-      & a:hover{
+      &.active span,
+      &:hover span{
         color: @color-white;
         border-color: @color-blue;
         background: @color-blue-l;
