@@ -1,12 +1,13 @@
 <template>
     <div class="hd-block content-bd">
         <!-- 社区首页内容 板块选择 -->
-        <div class="bd-menu clearfix">
+        <div class="bd-menu clearfix" v-if="isForum">
             <div class="menu-content">
-                <a href="#" class="item active">全部</a>
-                <a href="#" class="item">精华</a>
-                <a href="#" class="item">最新</a>
-                <a href="#" class="item">我感兴趣的</a>
+                <span class="item" 
+                :class="{active:currentIndex === index}"
+                v-for="(item,index) in tabIndex"
+                :key="index" 
+                @click="selectItem(index,item.orderby)">{{item.title}}</span>
             </div>
             <div class="bd-submit">
                 <a href="/user/send" class="button">发布新贴</a>
@@ -14,54 +15,60 @@
         </div>
         <!-- 社区首页内容 帖子列表 -->
         <div class="bd-content">
+          <div v-for="(item,index) in datalist">
+            {{item.title}}
+          </div>
             <div class="post-item">
                 <div class="post-avatar">
-                <div class="avatar-img">
-                    <img src="~static/images/default-avatar.png">
-                    <div class="avatar-detail" v-show="isShow">
-                    <div class="avatar-detail-info clearfix">
-                        <div class="big-avatar">
-                        <a href="#"><img src="~static/images/default-avatar.png"></a>
-                        <span class="score"><i class="detail-icon star-icon"></i>97</span>
+                  <div class="avatar-img">
+                      <img src="~static/images/default-avatar.png">
+                      <div class="avatar-detail-loading" v-if="isLoading">
+                        <img src="~assets/images/loading.gif">
+                      </div>
+                      <div class="avatar-detail" v-show="isShowUser" v-else="!isLoading">
+                        <div class="avatar-detail-info clearfix">
+                            <div class="big-avatar">
+                            <a href="#"><img src="~static/images/default-avatar.png"></a>
+                            <span class="score"><i class="detail-icon star-icon"></i>97</span>
+                            </div>
+                            <div class="info-desc">
+                            <h3 class="name">天亮了黎明<img src="~assets/images/label-hmj.png" class="label"></h3>
+                            <p class="desc">一生之中弯弯曲曲总会有靓丽的风景让我们学会珍惜</p>
+                            <ul class="label-list clearfix" style="position: relative">
+                                <li class="label-item">
+                                <a href="#"><i class="medal medal-7day"></i></a>
+                                </li>
+                                <li class="label-item"><a href="#"><i class="medal medal-30day"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-60day"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-120day"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-100question"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-200question"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-300question"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-fan1"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-fan3"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-fan5"></i></a></li>
+                                <li class="label-item"><a href="#"><i class="medal medal-sword"></i></a></li>
+                            </ul>
+                            </div>
                         </div>
-                        <div class="info-desc">
-                        <h3 class="name">天亮了黎明<img src="~assets/images/label-hmj.png" class="label"></h3>
-                        <p class="desc">一生之中弯弯曲曲总会有靓丽的风景让我们学会珍惜</p>
-                        <ul class="label-list clearfix" style="position: relative">
-                            <li class="label-item">
-                            <a href="#"><i class="medal medal-7day"></i></a>
-                            </li>
-                            <li class="label-item"><a href="#"><i class="medal medal-30day"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-60day"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-120day"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-100question"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-200question"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-300question"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-fan1"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-fan3"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-fan5"></i></a></li>
-                            <li class="label-item"><a href="#"><i class="medal medal-sword"></i></a></li>
-                        </ul>
+                        <div class="avatar-links">
+                            <a href="#" class="link-item">
+                            <h3 class="num">108</h3>
+                            <p class="txt">发帖</p>
+                            </a>
+                            <i class="divider"></i>
+                            <a href="#" class="link-item">
+                            <h3 class="num">108</h3>
+                            <p class="txt">回帖</p>
+                            </a>
+                            <i class="divider"></i>
+                            <a href="#" class="link-item">
+                            <h3 class="num">108</h3>
+                            <p class="txt">赞同</p>
+                            </a>
                         </div>
-                    </div>
-                    <div class="avatar-links">
-                        <a href="#" class="link-item">
-                        <h3 class="num">108</h3>
-                        <p class="txt">发帖</p>
-                        </a>
-                        <i class="divider"></i>
-                        <a href="#" class="link-item">
-                        <h3 class="num">108</h3>
-                        <p class="txt">回帖</p>
-                        </a>
-                        <i class="divider"></i>
-                        <a href="#" class="link-item">
-                        <h3 class="num">108</h3>
-                        <p class="txt">赞同</p>
-                        </a>
-                    </div>
-                    </div>
-                </div>
+                      </div>
+                  </div>
 
                 </div>
                 <div class="post-info">
@@ -100,9 +107,7 @@
                 <div class="post-avatar">
                 <div class="avatar-img">
                     <img src="~static/images/default-avatar.png">
-                    <div class="avatar-detail-loading" v-show="isShow">
-                    <img src="~assets/images/loading.gif">
-                    </div>
+                    
                 </div>
                 </div>
                 <div class="post-info">
@@ -127,29 +132,56 @@
         <!-- 社区首页内容 列表分页 -->
         <div class="pagelist">
             <div class="pagelist-center clearfix">
-                <a href="#" class="pageitem">&lt;&lt;</a>
-                <a href="#" class="pageitem active">1</a>
-                <a href="/index/index/p" class="pageitem">2</a>
-                <a href="#" class="pageitem">3</a>
-                <a href="#" class="pageitem">4</a>
-                <a href="#" class="pageitem">5</a>
-                <a href="#" class="pageitem">6</a>
-                <a href="#" class="pageitem">7</a>
-                <a href="#" class="pageitem">8</a>
-                <a href="#" class="pageitem">9</a>
-                <a href="#" class="pageitem">···</a>
-                <a href="#" class="pageitem">15</a>
-                <a href="#" class="pageitem">&gt;&gt;</a>
+                <a href="#" class="pageitem" v-if="currentPage > 1">&lt;&lt;</a>
+                <a href="#" class="pageitem" v-if="currentPage > 1">&lt;</a>
+                <a href="#" class="pageitem" 
+                  :class="{active:currentPage === index}"
+                  v-for="(item,index) in pageSize" :key="index"
+                  v-if="pageSize > 0 && index < pageSize-1">{{index+1}}</a>
+                <a href="#" class="pageitem" v-if="currentPage < pageSize">&gt;</a>
+                <a href="#" class="pageitem" v-if="pageSize > 0">{{pageSize}}</a>
             </div>
         </div>
     </div>
 
 </template>
 <script>
+import {getForumList} from "~/plugins/api"
 export default {
   data() {
     return {
-      isShow: true
+        isLoading: true,
+        isForum: true,
+        tabIndex:[
+            {"title":"全部","orderby":"all"},
+            {"title":"精华","orderby":"top"},
+            {"title":"最新","orderby":"time"},
+            {"title":"我感兴趣的","orderby":"my"}
+        ],
+        currentIndex:0,
+        currentPage:0,
+        pageSize:0,
+        datalist:[]
+    }
+  },
+  methods: {
+    selectItem(index,orderby){
+      this.currentIndex=index
+      // 根据orderby 加载数据
+      this._getForumList(orderby)
+    },
+    _getForumList(orderby){
+      getForumList({
+        "fid":"5",
+        "p":"1"
+      }).then(res=>{
+        debugger
+        this.datalist = res.data.list
+        this.pageSize = res.data.totalPage
+        this.currentPage = res.data.page -1
+      }).catch(err=>{
+        console.log(err)
+      })
     }
   }
 }

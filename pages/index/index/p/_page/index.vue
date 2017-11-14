@@ -3,10 +3,10 @@
     <div class="ask-content">
         <!--社区首页内容 板块选择-->
         <div class="hd-block content-hd">
-          <div class="header" @click="clickItem(2)">版块</div>
+          <div class="header">版块</div>
           <ul class="module-row clearfix">
             <li class="active"><router-link tag="span" to="/">帖子</router-link></li>
-            <li v-for="(item,index) in forumlist.data" :key="index" v-if="index < 7">
+            <li v-for="(item,index) in forumlist" :key="index" v-if="index < 7">
               <span @click="selectItem(item)">{{item.title}}</span>
             </li>
           </ul>
@@ -14,7 +14,7 @@
         <!-- 广告 -->
         <div class="adv-bar">
           <a href="#" target="_blank">
-            <img src="images/default-avatar.png">
+            <img src="images/bar.jpg">
           </a>
         </div>
         <!--社区首页内容 帖子列表-->
