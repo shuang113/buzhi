@@ -90,12 +90,23 @@ body{
   transition: all .3s;
 }
 .drop-down-enter,.drop-down-leave-active{
-  transform:scaleY(0);
-  transform-origin:center top;
+  opacity: 0;
 }
 .slide-right-enter-active,.slide-right-leave-active{
   transition:all .5s;
 }
 .slide-right-enter,.slide-right-leave-active{
   transform:translateX(200%);
+}
+.slide-bottom-enter-active,.slide-bottom-leave-active{
+  transition: all .5s;
+  .g-content{
+    transition: all .5s;
+  }
+}
+.slide-bottom-enter,.slide-bottom-leave-active{
+  opacity: 0;
+  .g-content{
+    transform: translateY(500%)
+  }
 }

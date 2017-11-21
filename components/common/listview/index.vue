@@ -1,10 +1,10 @@
 <template>
     <div class="hd-block content-bd">
         <!-- 社区首页内容 板块选择 -->
-        <div class="bd-menu clearfix" v-if="isForum">
+        <div class="bd-menu clearfix" v-if="isTabMenu">
             <div class="menu-content">
                 <span class="item" 
-                :class="{active:currentIndex === index}"
+                :class="{active:currentTab === index}"
                 v-for="(item,index) in tabIndex"
                 :key="index" 
                 @click="selectItem(index,item.orderby)">{{item.title}}</span>
@@ -15,20 +15,17 @@
         </div>
         <!-- 社区首页内容 帖子列表 -->
         <div class="bd-content">
-          <div v-for="(item,index) in datalist">
-            {{item.title}}
-          </div>
-            <div class="post-item">
-                <div class="post-avatar">
+            <div class="post-item" v-for="(item,index) in datalist.list" :key="index">
+                <div class="post-avatar" @mouseenter="showUser(item.user_id)">
                   <div class="avatar-img">
-                      <img src="~static/images/default-avatar.png">
+                      <img :src="item.avatar">
                       <div class="avatar-detail-loading" v-if="isLoading">
                         <img src="~assets/images/loading.gif">
                       </div>
-                      <div class="avatar-detail" v-show="isShowUser" v-else="!isLoading">
+                      <div class="avatar-detail">
                         <div class="avatar-detail-info clearfix">
                             <div class="big-avatar">
-                            <a href="#"><img src="~static/images/default-avatar.png"></a>
+                            <a href="#"><img src="images/default-avatar.png"></a>
                             <span class="score"><i class="detail-icon star-icon"></i>97</span>
                             </div>
                             <div class="info-desc">
@@ -69,119 +66,105 @@
                         </div>
                       </div>
                   </div>
-
                 </div>
-                <div class="post-info">
-                    <a class="title" href="#"><span class="post-tag post-tag-red">置顶</span><span class="post-tag post-tag-yellow">精华</span><span class="txt">连载·更新3月21日30天冲刺，你的申论必须这样学</span></a>
-                    <p class="desc">1111111112017省考，申论多少分，进面的机会比较大?从往年的数据、省考上岸的情况看70分+比较靠谱—换个角度来讲只有申论70+，才有希望和可能上岸</p>
-                    <p class="detail"><span class="author">申论·花木君<img src="~assets/images/label-teacher.png" class="label"></span><span class="time">24人赞同 · 78个回复 · 5152次浏览 · 53秒前</span></p>
-                </div>
-            </div>
-            <div class="post-item">
-                <div class="post-avatar">
-                <div class="avatar-img">
-                    <img src="~static/images/default-avatar.png">
-
-                </div>
-                </div>
-                <div class="post-info">
-                    <a class="title" href="#"><span class="post-tag post-tag-red">置顶</span><span class="post-tag post-tag-yellow">精华</span><span class="txt">连载·更新3月21日30天冲刺，你的申论必须这样学</span></a>
-                    <p class="desc">2017省考，申论多少分，进面的机会比较大?从往年的数据、省考上岸的情况看70分+比较靠谱—换个角度来讲只有申论70+，才有希望和可能上岸</p>
-                    <p class="detail"><span class="author">申论·花木君<img src="~assets/images/label-teacher.png" class="label"></span><span class="time">24人赞同 · 78个回复 · 5152次浏览 · 53秒前</span></p>
-                </div>
-
-            </div>
-            <div class="post-item">
-                <div class="post-avatar">
-                <div class="avatar-img">
-                    <img src="~static/images/default-avatar.png">
-                </div>
-                </div>
-                <div class="post-info">
-                    <a class="title" href="#"><span class="post-tag post-tag-yellow">精华</span><span class="txt">连载·更新3月21日30天冲刺，你的申论必须这样学</span></a>
-                    <p class="desc">2017省考，申论多少分，进面的机会比较大?从往年的数据、省考上岸的情况看70分+比较靠谱—换个角度来讲只有申论70+，才有希望和可能上岸</p>
-                    <p class="detail"><span class="author">申论·花木君<img src="~assets/images/label-officer.png" class="label"></span><span class="time">24人赞同 · 78个回复 · 5152次浏览 · 53秒前</span></p>
-                </div>
-            </div>
-            <div class="post-item">
-                <div class="post-avatar">
-                <div class="avatar-img">
-                    <img src="~static/images/default-avatar.png">
-                    
-                </div>
-                </div>
-                <div class="post-info">
-                    <a class="title" href="#"><span class="txt">连载·更新3月21日30天冲刺，你的申论必须这样学</span></a>
-                    <p class="desc">2017省考，申论多少分，进面的机会比较大?从往年的数据、省考上岸的情况看70分+比较靠谱—换个角度来讲只有申论70+，才有希望和可能上岸</p>
-                    <p class="detail"><span class="author">申论·花木君<img src="~assets/images/label-hmj.png" class="label"><img src="~assets/images/label-ly.png" class="label"><img src="~assets/images/label-bc.png" class="label"><img src="~assets/images/label-pass.png" class="label"></span><span class="time">24人赞同 · 78个回复 · 5152次浏览 · 53秒前</span></p>
-                </div>
-            </div>
-            <div class="post-item">
-                <div class="post-avatar">
-                <div class="avatar-img">
-                    <img src="~static/images/default-avatar.png">
-                </div>
-                </div>
-                <div class="post-info">
-                    <a class="title" href="#"><span class="txt">连载·更新3月21日30天冲刺，你的申论必须这样学</span></a>
-                    <p class="desc">2017省考，申论多少分，进面的机会比较大?从往年的数据、省考上岸的情况看70分+比较靠谱—换个角度来讲只有申论70+，才有希望和可能上岸</p>
-                    <p class="detail"><span class="author">申论·花木君</span><span class="time">24人赞同 · 78个回复 · 5152次浏览 · 53秒前</span></p>
+                <div class="post-info" @click="clickItem(item.fid,item.id)">
+                    <a class="title" href="#">
+                      <!-- <span class="post-tag post-tag-red">置顶</span>
+                      <span class="post-tag post-tag-yellow">精华</span> -->
+                      <span class="txt">{{item.title}}</span>
+                    </a>
+                    <p class="desc" v-if="item.desc">{{item.desc}}</p>
+                    <p class="detail">
+                      <span class="author">
+                        {{item.cnname}}
+                        <!-- <img src="~assets/images/label-teacher.png" class="label"> -->
+                      </span>
+                      <span class="time">{{item.zan_num}}人赞同 · {{item.post_num}}个回复 · {{item.hit_num}}次浏览 · 53秒前</span>
+                    </p>
                 </div>
             </div>
         </div>
         <!-- 社区首页内容 列表分页 -->
         <div class="pagelist">
             <div class="pagelist-center clearfix">
-                <a href="#" class="pageitem" v-if="currentPage > 1">&lt;&lt;</a>
-                <a href="#" class="pageitem" v-if="currentPage > 1">&lt;</a>
+                <a href="#" class="pageitem" v-show="current !== 1" @click="goto(1)">&lt;&lt;</a>
+                <a href="#" class="pageitem" v-show="current !== 1" @click="current-- && goto(current)">&lt;</a>
                 <a href="#" class="pageitem" 
-                  :class="{active:currentPage === index}"
-                  v-for="(item,index) in pageSize" :key="index"
-                  v-if="pageSize > 0 && index < pageSize-1">{{index+1}}</a>
-                <a href="#" class="pageitem" v-if="currentPage < pageSize">&gt;</a>
-                <a href="#" class="pageitem" v-if="pageSize > 0">{{pageSize}}</a>
+                  v-for="index in pages" 
+                  @click="goto(index)" 
+                  :class="{'active':current === index}" 
+                  :key="index">{{index}}</a>
+                <a href="#" class="pageitem" v-show="allpage !== current && allpage !== 0 " @click="current++ && goto(current++)">&gt;</a>
+                <a href="#" class="pageitem" v-show="allpage !== 1">{{allpage}}</a>
             </div>
         </div>
     </div>
-
 </template>
 <script>
 import {getForumList} from "~/plugins/api"
 export default {
   data() {
     return {
-        isLoading: true,
-        isForum: true,
+        isLoading: false,
         tabIndex:[
             {"title":"全部","orderby":"all"},
             {"title":"精华","orderby":"top"},
             {"title":"最新","orderby":"time"},
             {"title":"我感兴趣的","orderby":"my"}
         ],
-        currentIndex:0,
-        currentPage:0,
-        pageSize:0,
-        datalist:[]
+        currentTab:0,//tab当前项
+        current:1,//分页当前页
+        showItem:4//分页显示页数
+    }
+  },
+  props: {
+    isTabMenu: {//是否有tab菜单栏
+        type: Boolean,
+        default:true
+    },
+    datalist: {
+        type: Object,
+        default:null
+    }
+  },
+  computed:{
+    pages:function(){
+      var pag = [];
+      this.allpage = this.datalist.totalPage
+      if( this.current < this.showItem ){
+        var i = Math.min(this.showItem,this.allpage);
+        while(i){
+            pag.unshift(i--);
+        }
+      }else{
+          var middle = this.current - Math.floor(this.showItem / 2 ),
+              i = this.showItem;
+          if( middle >  (this.allpage - this.showItem)  ){
+              middle = (this.allpage - this.showItem) + 1
+          }
+          while(i--){
+              pag.push( middle++ );
+          }
+      }
+      return pag
+    }
+  },
+  methods:{
+    goto:function(index){
+      if(index === this.current) return;
+        this.current = index;
+        this.$emit("goto",index);
     }
   },
   methods: {
     selectItem(index,orderby){
-      this.currentIndex=index
+      this.currentTab=index
       // 根据orderby 加载数据
-      this._getForumList(orderby)
+      alert('获取'+ orderby + '的数据')
+      // this._getForumList(orderby)
     },
-    _getForumList(orderby){
-      getForumList({
-        "fid":"5",
-        "p":"1"
-      }).then(res=>{
-        debugger
-        this.datalist = res.data.list
-        this.pageSize = res.data.totalPage
-        this.currentPage = res.data.page -1
-      }).catch(err=>{
-        console.log(err)
-      })
+    showUser(userid){
+      console.log(userid)
     }
   }
 }
@@ -199,6 +182,7 @@ export default {
       height: 48px;
       line-height: 48px;
       .item {
+        cursor: pointer;
         padding: 0 20px;
         font-size: 14px;
         color: @color-gray;
@@ -334,6 +318,7 @@ export default {
   border-radius: 4px;
   background: @color-white;
   z-index: 9;
+  display:none;
 }
 .avatar-detail {
   position: absolute;
@@ -344,6 +329,7 @@ export default {
   background: @color-white;
   z-index: 9;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  display:none;
   .avatar-detail-info {
     height: 130px;
     padding-top: 16px;

@@ -1,0 +1,37 @@
+{
+    "status":1,
+    "data":{
+        "uid":"2052",
+        "nickname" : "陈小陈",
+        "avatar" : "http://gkimg.cdn.midasjoy.com/Uploads/avatar/2017/0317/58cb3dfcc7f9e_80.jpg",
+        "course_name_ico":[
+            {
+                "course_name":"风暴羚羊课程VIP",
+                "course_ico":"http://gkimg.cdn.midasjoy.com/Uploads/picture/20160725/579560ba500d0.png",
+                "course_id":"2"
+            },
+            {
+                "course_name":"花木君课程VIP",
+                "course_ico":"http://gkimg.cdn.midasjoy.com/Uploads/picture/20160725/579560b1f265d.png",
+                "course_id":"1"
+            },
+            {
+                "course_name":"北楚课程VIP",
+                "course_ico":"http://gkimg.cdn.midasjoy.com/Uploads/picture/20160729/579ac3ac6e547.png",
+                "course_id":"3"
+            },
+            {
+                "course_name":"沙馆长 · 主讲公基",
+                "course_ico":"http://gkimg.cdn.midasjoy.com/Uploads/picture/20170801/597fec5486d9b.png",
+                "course_id":"4"
+            }
+        ],
+        "prize_ico":[],
+        "posts":108,
+        "replay":200,
+        "praise":89,
+        "isSign":false,
+        "sign_continuity":0,
+        "sign_day":8
+    }
+}
