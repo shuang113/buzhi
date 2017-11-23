@@ -1,7 +1,14 @@
 {
     "status":"1",
     "data":[
-        {"uid":"50","nickname":"申论.花木君","avatar":"images/default-avatar.png","score":"200","type":"官方","follow":true,"info":"步知公考申论主讲老师,我就是花木君"},
-        {"uid":"60","nickname":"女王达人","avatar":"images/default-avatar.png","score":"95","type":"","follow":false,"info":"上岸小学员"}
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":true,"info":"步知公考申论主讲老师,我就是花木君"},
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":false,"info":"步知公考申论主讲老师,我就是花木君"},
+        {"uid":"60","nickname":"女王达人","avatar":"/images/default-avatar.png","score":"95","type":"","follow":true,"info":"上岸小学员"},
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":false,"info":"步知公考申论主讲老师,我就是花木君"},
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":true,"info":"步知公考申论主讲老师,我就是花木君"},
+        {"uid":"60","nickname":"女王达人","avatar":"/images/default-avatar.png","score":"95","type":"","follow":true,"info":"上岸小学员"},
+        {"uid":"60","nickname":"女王达人","avatar":"/images/default-avatar.png","score":"95","type":"","follow":false,"info":"上岸小学员"},
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":true,"info":"步知公考申论主讲老师,我就是花木君"},
+        {"uid":"50","nickname":"申论.花木君","avatar":"/images/default-avatar.png","score":"200","type":"官方","follow":true,"info":"步知公考申论主讲老师,我就是花木君"}
     ]
 }

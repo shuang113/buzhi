@@ -2,8 +2,11 @@
     <!-- 社区首页侧栏 大咖课程 -->
     <div class="sider-channel sider-item" >
         <div class="sider-time">
-            <i class="iconfont icon-shizhong"></i>国考倒计时:
-            <span class="time-box">4</span><span class="time-box">5</span><span class="time-m">天</span>
+            <i class="iconfont icon-shizhong"></i>
+            {{examCount.message}}
+            <span class="time-box">{{examCount.a}}</span>
+            <span class="time-box">{{examCount.b}}</span>
+            <span class="time-m">天</span>
         </div>
         <div class="title">大咖课程</div>
         <div class="channel-item">
@@ -36,7 +39,31 @@
     </div>
 </template>
 <script>
- export default {}
+import axios from "axios"
+import {STATUS_OK, examCountTips} from "~/plugins/api"
+export default {
+    data () {
+        return {
+            examCount:{}
+        }
+    },
+    methods: {
+        _getExamCountTips(){
+            // 获取考试倒计时信息
+            examCountTips().then(res=>{
+                let day=res.data.day
+                let exam={}
+                exam.message=res.data.message
+                exam.a=day.substring(0,1)
+                exam.b=day.substring(1,2)
+                this.examCount = exam
+            })
+        }
+    },
+    created () {
+      this._getExamCountTips()
+    }
+}
 </script>
 <style lang="less" scoped>
 @import "~assets/style/variable.less";
@@ -77,6 +104,7 @@
             color: @color-red-l;
             font-size: 20px;
             vertical-align: middle;
+            font-weight:bold;
         }
         .time-m {
             margin-left: 5px;

@@ -1,8 +1,8 @@
 <template>
     <!-- 社区首页侧栏 申论批改倒计时 -->
     <div class="sider-countdown sider-item">
-        <div class="title">申论批改倒计时</div>
-        <div class="countdown-con">
+        <div class="title">申论批改进行中</div>
+        <!-- <div class="countdown-con">
             <div class="countdown clearfix">
                 <span class="num num-1">0</span>
                 <span class="num">9</span>
@@ -15,8 +15,8 @@
                 <span class="txt">秒</span>
             </div>
         </div>
-        <p class="had-num">批改名额： 15</p>
-        <a href="#" class="countdown-btn countdown-btn-can">申请作答</a>
+        <p class="had-num">批改名额： 15</p> -->
+        <nuxt-link to="/thread/9013" class="countdown-btn countdown-btn-can">申请作答</nuxt-link>
     </div>
 
 </template>

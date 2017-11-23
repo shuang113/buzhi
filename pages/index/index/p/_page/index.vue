@@ -1,66 +1,65 @@
 <template>
-  <div class="container clearfix">
-    <div class="ask-content">
-        <!--社区首页内容 板块选择-->
-        <div class="hd-block content-hd">
-          <div class="header">版块</div>
-          <ul class="module-row clearfix">
-            <!-- <li class="active"><router-link tag="span" to="/">帖子</router-link></li> -->
-            <li v-for="(item,index) in forumlist" 
-            :key="index" 
-            v-if="index < 8" 
-            :class="{active:currentIndex===index}">
-              <span @click="selectForum(item)">{{item.title}}</span>
-            </li>
-          </ul>
-        </div>
-        <!-- 广告 -->
-        <div class="adv-bar">
-          <a href="#" target="_blank">
-            <img src="images/bar.jpg">
-          </a>
-        </div>
-        <!--社区首页内容 帖子列表-->
-        <bz-listview :datalist="datalist" :isTabMenu="isTabMenu"></bz-listview>
-        <!-- 推荐关注 弹窗 -->
-        <transition name="slide-bottom">
-          <div class="g-mask" v-show="isShowPop">
-            <div class="auto-recommended g-content">
-              <span class="close" @click="isShowPop = !isShowPop"></span>
-              <h3 class="title">Hi~亲爱的<span class="red-txt">{{userinfo.nickname}}</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
-              <div class="con-list">
-                <ul class="clearfix">
-                  <li class="recommended-item clearfix" v-for="(item,index) in recommends" :key="index">
-                    <div class="recommended-pic">
-                      <img :src="item.avatar">
-                      <span class="score" :class="{'score-blue':item.type}" v-if="item.type">{{item.type}}</span>
-                      <span class="score" v-else><i class="star-icon"></i>{{item.score}}</span>
-                    </div>
-                    <div class="recommended-desc">
-                      <h3>{{item.nickname}}</h3>
-                      <span class="is-recom" v-if="item.follow" @click="item.follow = !item.follow"><i class="tick-icon red-icon"></i>关注</span>
-                      <span class="is-recom" v-else @click="item.follow = !item.follow"><i class="tick-icon gray-icon"></i>已关注</span>
-                      <p class="desc-txt">简介：{{item.info}}</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="auto-bottom">
-                <span class="auto-recommended-btn" @click="setFollow()"><i class="tick-icon white-icon"></i>确认关注  开启社区之旅</span>
-              </div>
+    <div class="container clearfix">
+        <div class="ask-content">
+            <!--社区首页内容 板块选择-->
+            <div class="hd-block content-hd">
+            <div class="header">版块</div>
+            <ul class="module-row clearfix">
+                <li v-for="(item,index) in forumlist" 
+                :key="index" 
+                v-if="index < 8" 
+                :class="{active:item.id == fid}">
+                <span @click="selectForum(item.id)">{{item.title}}</span>
+                </li>
+            </ul>
             </div>
-          </div>
-        </transition>
+            <!-- 广告 -->
+            <div class="adv-bar">
+                <a href="#" target="_blank">
+                    <img src="/images/bar.jpg">
+                </a>
+            </div>
+            <!--社区首页内容 帖子列表-->
+            <bz-listview :datalist="datalist" :isTabMenu="isTabMenu" @goto="gotoIndex"></bz-listview>
+            <!-- 推荐关注 弹窗 -->
+            <transition name="slide-bottom">
+            <div class="g-mask" v-show="isShowPop">
+                <div class="auto-recommended g-content">
+                <span class="close" @click="isShowPop = !isShowPop"></span>
+                <h3 class="title">Hi~亲爱的<span class="red-txt">{{userinfo.nickname}}</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
+                <div class="con-list">
+                    <ul class="clearfix">
+                    <li class="recommended-item clearfix" v-for="(item,index) in recommends" :key="index">
+                        <div class="recommended-pic">
+                        <img :src="item.avatar">
+                        <span class="score" :class="{'score-blue':item.type}" v-if="item.type">{{item.type}}</span>
+                        <span class="score" v-else><i class="star-icon"></i>{{item.score}}</span>
+                        </div>
+                        <div class="recommended-desc">
+                        <h3>{{item.nickname}}</h3>
+                        <span class="is-recom" v-if="item.follow" @click="item.follow = !item.follow"><i class="tick-icon red-icon"></i>关注</span>
+                        <span class="is-recom" v-else @click="item.follow = !item.follow"><i class="tick-icon gray-icon"></i>已关注</span>
+                        <p class="desc-txt">简介：{{item.info}}</p>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                <div class="auto-bottom">
+                    <span class="auto-recommended-btn" @click="setFollow()"><i class="tick-icon white-icon"></i>确认关注  开启社区之旅</span>
+                </div>
+                </div>
+            </div>
+            </transition>
+        </div>
+        <!-- 右侧栏 -->
+        <div class="ask-side">
+            <bz-userinfo v-show="!userinfo.length" :user="userinfo"></bz-userinfo>
+            <bz-course></bz-course>
+            <bz-tools></bz-tools>
+            <bz-correct></bz-correct>
+            <bz-read-more></bz-read-more>
+        </div>
     </div>
-    <!-- 右侧栏 -->
-    <div class="ask-side">
-      <bz-userinfo v-show="!userinfo.length" :user="userinfo"></bz-userinfo>
-      <bz-course></bz-course>
-      <bz-tools></bz-tools>
-      <bz-correct></bz-correct>
-      <bz-read-more></bz-read-more>
-    </div>
-  </div>
 </template>
 <script>
 import axios from "axios"
@@ -72,14 +71,14 @@ import BzTools from "~/components/sider/tools"
 import BzCorrect from "~/components/sider/correct"
 import BzReadMore from "~/components/sider/readmore"
 export default {
-  head() {
+   head() {
     return {
       title: `步知公考社区 - 最具品质的公务员考试论坛`
     }
   },
   async asyncData({ params, error }) {
     return axios
-      .all([ getForumCate(), getForumList({ fid: "", p: "1" })])
+      .all([ getForumCate(), getForumList({ fid: "0", p: params.page || 1 })])
       .then(
         axios.spread(function(forum, applist) {
           return {
@@ -112,18 +111,12 @@ export default {
   },
   methods: {
     // 点击版块
-    selectForum(item, index) {
-      // this.fid = item.id
-      // this.currentIndex = index
-      // this.$router.push({
-      //   path: `/forum/${item.id}`
-      // })
-    },
-    // 翻页
-    goto(index) {
-      getForumList({ fid: this.id, p: index }).then(res => {
-        console.log(res.data)
-      })
+    selectForum(id) {
+      if(id === "0"){
+        this.$router.push({path:'/'})
+      }else{
+        this.$router.push({path: `/forum/${id}`})        
+      }
     },
     _getUserInfo() {
       // 获取userinfo信息
@@ -141,6 +134,9 @@ export default {
     setFollow(){
       // setFollow(ids).then()
       this.isShowPop = !this.isShowPop
+    },
+    gotoIndex(index){
+      this.$router.push({path:'/index/index/p/'+index})
     }
   },
   created() {
@@ -153,6 +149,12 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "~assets/style/variable.less";
+@import 'https://at.alicdn.com/t/font_447799_2v7ocrx22pytlnmi.css';
+.ask-wrapper{
+  background: #edf0f5;
+  padding-bottom: 40px;
+  margin-top:20px;
+}
 .ask-content {
   float: left;
   width: 730px;
@@ -269,6 +271,9 @@ export default {
       padding-top: 12px;
       height: 108px;
       background: #f2f2f5;
+      &:nth-child(3n+3){
+        margin-right:0;
+      }
     }
   }
   .auto-recommended-btn {

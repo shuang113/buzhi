@@ -32,13 +32,12 @@ module.exports = {
     'http://ask.gk.buzhi.com/api',
     'http://localhost:3000/api'
   ],
-  // plugins:['~plugins/axios'],
   router: {
     extendRoutes (routes) {
       routes.push({
         name: 'index',
         path: '/',
-        component: 'pages/index/index/p/_page'
+        component: 'pages/index/index/p/_page/index.vue'
       })
     }
   }

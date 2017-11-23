@@ -53,7 +53,7 @@ li{
 }
 body, html{
   line-height: 1.4;
-  font-family:"Microsoft Yahei","黑体","宋体",Arial,Simsun,Helvetica,sans-serif;
+  font-family:Arial,Helvetica,sans-serif,"Microsoft Yahei","黑体","宋体";
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   background: #edf0f5;
@@ -86,27 +86,40 @@ body{
   font-size:18px;
   color:#999;
 }
+// 主菜单栏下拉
 .drop-down-enter-active,.drop-down-leave-active{
   transition: all .3s;
 }
 .drop-down-enter,.drop-down-leave-active{
   opacity: 0;
 }
+// 右侧下拉菜单右滑
 .slide-right-enter-active,.slide-right-leave-active{
   transition:all .5s;
 }
 .slide-right-enter,.slide-right-leave-active{
   transform:translateX(200%);
 }
+// 浏览更多 进入 离开
+.slide-right-left-enter-active,.slide-right-left-leave-active{
+  transition:all .5s;
+}
+.slide-right-left-enter{
+  transform:translateX(200%);
+}
+.slide-right-left-leave-to{
+  transform:translateX(-200%);
+}
+// 弹窗下滑
 .slide-bottom-enter-active,.slide-bottom-leave-active{
-  transition: all .5s;
+  transition: all .8s;
   .g-content{
-    transition: all .5s;
+    transition: all .7s;
   }
 }
 .slide-bottom-enter,.slide-bottom-leave-active{
   opacity: 0;
   .g-content{
-    transform: translateY(500%)
+    transform: translateY(200%)
   }
 }

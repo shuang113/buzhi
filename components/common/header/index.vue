@@ -1,8 +1,8 @@
 <template>
     <div class="hd-header clearfix">
         <ul class="hd-nav">
-            <li class="logo"><a href="#"><img src="images/public-header-logo.png" alt="步知公考"/></a></li>
-            <li><a href="#">首页</a></li>
+            <li class="logo"><a href="http://g.buzhi.com" target="_blank"><img src="/images/public-header-logo.png" alt="步知公考"/></a></li>
+            <li><a href="/">首页</a></li>
             <li @mouseenter.stop="isShowSelf= !isShowSelf" @mouseleave.stop="isShowSelf= !isShowSelf">
               <a href="#">全部老师</a>
               <transition name="drop-down">
@@ -33,7 +33,7 @@
         </ul>
         <div class="hd-avatar" :class="{'active':isShow }" @mouseenter="isShow =!isShow" @mouseleave="isShow =!isShow">
             <div class="avatar-img">
-                <img src="images/default-avatar.png">
+                <img src="/images/default-avatar.png">
                 <span class="num-label">121</span>
             </div>
             <span class="avatar-name">{{userinfo.name}}<i class="icon-daosanjiao"></i></span>

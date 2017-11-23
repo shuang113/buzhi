@@ -26,7 +26,7 @@ export function getForumList(options) {
 // 获取登录用户
 export function getUserInfo() {
     // const url = baseUrl + '/api?router=thread.appLists'
-    const url="data/userinfo.json"
+    const url = baseUrl + "/data/userinfo.json"
     return axios.get(url).then((res) => {
         return Promise.resolve(res.data)
     })
@@ -34,7 +34,7 @@ export function getUserInfo() {
 // 获取推荐关注
 export function getRecommends(options) {
     // const url = baseUrl + '/api?router=thread.appLists'
-    const url="data/recommends.json"
+    const url = baseUrl + "/data/recommends.json"
     return axios.get(url).then((res) => {
         return Promise.resolve(res.data)
     })
@@ -50,4 +50,26 @@ export function setFollow(options) {
     // }).then((res) => {
     //     return Promise.resolve(res.data)
     // })
+}
+// 国考倒计时
+export function examCountTips() {
+    // const url = baseUrl + '/api?router=thread.appLists'
+    const url = baseUrl + "/data/examCountTips.json"
+    return axios.get(url).then((res) => {
+        return Promise.resolve(res.data)
+    })
+}
+// 申论批改场
+export function getCorrectList() {
+    const url = baseUrl + "/api?router=thread.correct"
+    return axios.get(url).then((res) => {
+        return Promise.resolve(res.data)
+    })
+}
+// 批改达人
+export function getCorrectMaster() {
+    const url = baseUrl + "/data/master.json"
+    return axios.get(url).then((res) => {
+        return Promise.resolve(res.data)
+    })
 }

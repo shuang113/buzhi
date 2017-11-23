@@ -7,25 +7,43 @@
                     v-for="(item,index) in tabs" 
                     :key="index" 
                     :class="{active:currentIndex === index}"
-                    @click.stop="tab(index)"><a href="javascript:void(0);">{{item}}</a>
+                    @click.stop="currentIndex = index"><span>{{item}}</span>
                 </li>            
             </ul>
         </div>
-        <div class="tab-article-con" style="overflow:hidden;">
-            <ul class="clearfix tab-container">
-                <!-- <transition-group name="slide-right"> -->
-                <li class="tab-article-item">
+        <div class="tab-article-con">
+            <transition-group  tag="ul" class="tab-container" name="slide-right-left">
+                <li class="tab-article-item" v-show="currentIndex === 0" :key="0">
                     <ul class="tab-article-container">
                         <li class="article-detail">
                         <a href="#">
-                            <h3><i class="point"></i>111111111111111130天冲刺申论这样学！</h3>
+                            <h3><i class="point"></i>30天冲刺111111申论这样学！</h3>
                             <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
                         </a>
                         </li>
                     </ul>
                 </li>
-                <!-- </transiton-group> -->
-            </ul>
+                <li class="tab-article-item" v-show="currentIndex === 1" :key="1">
+                    <ul class="tab-article-container">
+                        <li class="article-detail">
+                        <a href="#">
+                            <h3><i class="point"></i>2222230天冲刺申论这样学！22222</h3>
+                            <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
+                        </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tab-article-item" v-show="currentIndex === 2" :key="2">
+                    <ul class="tab-article-container">
+                        <li class="article-detail">
+                        <a href="#">
+                            <h3><i class="point"></i>3330天冲刺333申论这样学！22222</h3>
+                            <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
+                        </a>
+                        </li>
+                    </ul>
+                </li>
+            </transition-group>
         </div>
     </div>
 
@@ -36,11 +54,6 @@
         return{
             currentIndex:0,
             tabs:["推荐好文","鱼塘","上岸分享"]
-        }
-    },
-    methods:{
-        tab(index){
-            this.currentIndex = index
         }
     }
  }
@@ -77,18 +90,19 @@
         &:last-child:after{
             width:0;
         }
-        a{
+        span{
+            cursor: pointer;
             display: block;
             &:hover{
                 font-weight: bold;
                 color: @color-blue;
             }
-
         }
         &.active {
             font-weight: bold;
             color: @color-blue;
-            a {
+            span {
+                cursor: default;
                 font-weight: bold;
                 color: @color-blue;
             }
@@ -100,10 +114,14 @@
     .tab-container {
         position: relative;
         width: 738px;
+        height:373px;
     }
     .tab-article-item {
-        float: left;
+        position:absolute;
+        top:0;
+        left:0;
         width: 246px;
+        height:100%;
     } 
     .tab-article-container {
         padding: 10px 10px 20px;
