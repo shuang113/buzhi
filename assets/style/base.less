@@ -19,7 +19,6 @@ footer, header, menu, nav, section{
 }
 i,em,strong{
   font-style:normal;
-  font-family: Georgia, Helvetica, Arial, Sans-serif;
   font-weight: normal;
 }
 table{
@@ -105,10 +104,10 @@ body{
   transition:all .5s;
 }
 .slide-right-left-enter{
-  transform:translateX(200%);
+  transform:translateX(100%);
 }
 .slide-right-left-leave-to{
-  transform:translateX(-200%);
+  transform:translateX(-100%);
 }
 // 弹窗下滑
 .slide-bottom-enter-active,.slide-bottom-leave-active{
@@ -123,3 +122,11 @@ body{
     transform: translateY(200%)
   }
 }
+// 签到+1
+// .scale-opacity-enter-active{
+//   transition: all .5s;
+// }
+// .scale-opacity-enter{
+//   opacity: 1;
+//   transform: scale(5);
+// }

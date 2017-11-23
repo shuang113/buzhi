@@ -5,11 +5,11 @@
         <div class="avater-detail">
             <div class="avatar-header">
                 <div class="avatar-pic">
-                    <img :src="user.avatar">
+                    <img :src="changeImg(user.avatar)">
                 </div>
                 <div class="avatar-name">
                   {{user.nickname}}
-                  <img :src="item.course_ico" class="label" v-for="(item,index) in user.course_name_ico" :key="index" :alt="item.course_name"/>
+                  <img :src="changeImg(item.course_ico)" class="label" v-for="(item,index) in user.course_name_ico" :key="index" :alt="item.course_name"/>
                 </div>
                 <div class="avatar-motto" v-if="user.info">{{user.info}}</div>
                 <div class="avatar-motto" v-else>从未停止求知的脚步!</div>
@@ -61,8 +61,11 @@
         <span class="red" v-else> {{user.sign_day}} </span>天
         <div class="qiandao-btn">
           <span class="strong">已签到</span>
-          <a href="#">查看签到规则</a>
+          <a href="/sign/top">签到排行榜</a>
         </div>
+        <transition name="scale-opacity">
+          <div class="sign-dialog" v-show="user.isSign">+1</div>
+        </transition>
       </div>
 
     <!-- 签到规则弹窗 -->
@@ -79,7 +82,7 @@ export default {
   props: {
     user: {
         type: Object,
-        default:null
+        default:{}
     }
   },
   computed: {
@@ -90,15 +93,21 @@ export default {
   methods: {
     goSign(uid){
       // goSign(uid).then()
+      // +1动画
       this.user.isSign = !this.user.isSign
     },
     _getSignTime(){
       let date = new Date()
       this.year = date.getFullYear()
-      this.month = date.getMonth() + 1;
-      this.date = date.getDate();
-      this.day = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")[date.getDay()];
-      return this.signTime = this.year + "-" + this.month + "-" + this.date + " " + this.day;
+      this.month = date.getMonth() + 1
+      this.date = date.getDate()
+      this.day = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")[date.getDay()]
+      return this.signTime = this.year + "-" + this.month + "-" + this.date + " " + this.day
+    },
+    changeImg(url){
+      if(url !== undefined || url !== null){
+        return '/images/default-avatar.png'
+      }
     }
   },
   created () {
@@ -254,6 +263,13 @@ export default {
     text-indent: 0;
     .red {
         color: #eb5255;
+    }
+    .sign-dialog{
+      position: absolute;
+      left:50%;
+      top:0;
+      font-size:14px;
+      color: #eb5255;
     }
     .qiandao-btn {
         cursor: default;

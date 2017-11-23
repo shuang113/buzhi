@@ -178,6 +178,7 @@ export default {
     padding: 15px 0;
     background: @color-theme-l;
     border-radius:0 0 6px 6px;
+    z-index:1;
     li{
       height: 34px;
       line-height: 34px;

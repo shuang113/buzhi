@@ -10,31 +10,36 @@
         </div>
         <!-- 右侧栏 -->
         <div class="ask-side">
-
+            <bz-course></bz-course>
+            <bz-master></bz-master>
         </div>
     </div>
 </template>
 <script>
-// import axios from "axios"
+import axios from "axios"
 import BzListview from "~/components/common/listview"
-// import {STATUS_OK, getForumList, getCorrectList,getCorrectMaster} from "~/plugins/api"
+import BzCourse from "~/components/sider/course"
+import BzMaster from "~/components/sider/master"
+import {STATUS_OK, getForumList, getCorrectList,getCorrectMaster} from "~/plugins/api"
 export default {
-  head: {
-    title: "申论批改场 - 步知公考社区 - 最具品质的公务员考试综合论坛"
+  head(){
+      return{
+        title: "申论批改场 - 步知公考社区 - 最具品质的公务员考试综合论坛"
+      }
   },
-//   async asyncData({ params, error }) {
-//     return axios
-//       .all([ getCorrectMaster(), getForumList({ fid: "0", p: 1 })])
-//       .then(
-//         axios.spread(function(master, applist) {
-//           return {
-//             masterlist: master.data,
-//             datalist: applist.data
-//           };
-//         })
-//       )
-//       .catch(error => console.log(error))
-//   },
+  async asyncData({ params, error }) {
+    return axios
+      .all([ getCorrectMaster(), getForumList({ fid: "0", p: 1 })])
+      .then(
+        axios.spread(function(master, applist) {
+          return {
+            masterlist: master.data,
+            datalist: applist.data
+          };
+        })
+      )
+      .catch(error => console.log(error))
+  },
   data () {
       return {
             isTabMenu:false,
@@ -43,19 +48,19 @@ export default {
       }
   },
   components: {
-      BzListview
+      BzListview,
+      BzCourse,
+      BzMaster
   },
   methods: {
     gotoIndex(index){
       this.$router.push({path:'/correct/index/p/'+index})
     }
-  },
-  mounted () {
-      console.log(datalist)
   }
 }
 </script>
 <style lang="less" scoped>
+@import "~assets/style/mixin.less";
 .correct{
     float: left;
     width: 730px;
@@ -81,8 +86,6 @@ export default {
         color: #fff;
     }
 }
-
-
 .ask-side {
   float: right;
   width: 250px;

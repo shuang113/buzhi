@@ -2,8 +2,7 @@
     <!-- 社区首页侧栏 大咖课程 -->
     <div class="sider-channel sider-item" >
         <div class="sider-time">
-            <i class="iconfont icon-shizhong"></i>
-            {{examCount.message}}
+            <i class="iconfont icon-shizhong"></i>{{examCount.message}} 
             <span class="time-box">{{examCount.a}}</span>
             <span class="time-box">{{examCount.b}}</span>
             <span class="time-m">天</span>
@@ -67,13 +66,11 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "~assets/style/variable.less";
+@import "~assets/style/mixin.less";
 .sider-channel{
     padding:0 10px 10px;
-    margin-bottom: 20px;
-    border: 2px solid #d9d9d9;
-    border-radius: 4px;
-    background: #fff;
-    .title {
+    .sider-item;
+    .title{
         padding: 5px 0 20px 0;
     }
     .sider-time {

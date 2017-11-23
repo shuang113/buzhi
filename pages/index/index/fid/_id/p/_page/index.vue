@@ -2,40 +2,28 @@
     <div class="container clearfix">
         <div class="ask-content">
             <!--社区首页内容 板块选择-->
-            <div class="hd-block content-hd">
-                <div class="header">版块</div>
-                <ul class="module-row clearfix" ref="forumItem">
-                    <li v-for="(item,index) in forumlist" 
-                    :key="index" 
-                    v-if="index < 8" 
-                    :class="{active:item.id===fid}">
-                    <span @click="selectForum(item.id)">{{item.title}}</span>
-                    </li>
-                </ul>
-            </div>
+            <bz-forum></bz-forum>
             <!-- 广告 -->
-            <div class="adv-bar">
-                <a href="#" target="_blank">
-                    <img src="/images/bar.jpg">
-                </a>
-            </div>
+            <bz-forum-ad/>
             <!--社区首页内容 帖子列表-->
             <bz-listview :datalist="datalist" :isTabMenu="isTabMenu" @goto="gotoIndex"></bz-listview>
         </div>
         <!-- 右侧栏 -->
         <div class="ask-side">
-        <bz-userinfo v-show="!userinfo.length" :user="userinfo"></bz-userinfo>
-        <bz-course></bz-course>
-        <bz-tools></bz-tools>
-        <bz-correct></bz-correct>
-        <bz-read-more></bz-read-more>
+          <bz-userinfo v-show="!userinfo.length" :user="userinfo"></bz-userinfo>
+          <bz-course/>
+          <bz-tools/>
+          <bz-correct/>
+          <bz-read-more/>
         </div>
     </div>
 </template>
 <script>
 import axios from "axios"
+import BzForum from "~/components/common/forum"
+import BzForumAd from "~/components/common/forum/ad"
 import BzListview from "~/components/common/listview"
-import {STATUS_OK, getForumCate, getForumList, getUserInfo, getRecommends} from "~/plugins/api"
+import {STATUS_OK, getForumList, getUserInfo} from "~/plugins/api"
 import BzUserinfo from "~/components/sider/side-info"
 import BzCourse from "~/components/sider/course"
 import BzTools from "~/components/sider/tools"
@@ -49,12 +37,12 @@ export default {
   },
   async asyncData({ params, error }) {
     return axios
-      .all([ getForumCate(), getForumList({ fid: params.id || "0", p: params.page || 1 })])
+      .all([ getForumList({ fid: params.id || "0", p: params.page || 1 })])
       .then(
-        axios.spread(function(forum, applist) {
+        axios.spread(function(applist) {
           return {
-            forumlist: forum.data,
-            datalist: applist.data
+            datalist: applist.data,
+            fid: params.id || "0"
           };
         })
       )
@@ -63,15 +51,14 @@ export default {
   data() {
     return {
       userinfo: {},      //用户信息
-      forumlist:{},      //版块分类
       datalist:{},      //全部帖子列表数据
-      currentIndex: 0,  //当前版块项
-      fid: this.$route.params.id || "0",//版块id
       isTabMenu:true,    //listview是否有tab菜单
       headTitle:""
     }
   },
   components: {
+    BzForum,
+    BzForumAd,
     BzListview,
     BzUserinfo,
     BzCourse,
@@ -80,14 +67,6 @@ export default {
     BzReadMore
   },
   methods: {
-    // 点击版块
-    selectForum(id) {
-      if(id === "0"){
-        this.$router.push({path:'/'})
-      }else{
-        this.$router.push({path: `/forum/${id}`})        
-      }
-    },
     _getUserInfo() {
       // 获取userinfo信息
       getUserInfo().then(res=>{
@@ -103,11 +82,11 @@ export default {
       this._getUserInfo()
     })
   },
-  mounted () {
-    if(this.$refs.forumItem){
-        this.headTitle = String(this.$refs.forumItem.querySelector('.active').innerText) 
-    }
-  }
+  // mounted () {
+  //   if(this.$refs.forumItem){
+  //       this.headTitle = String(this.$refs.forumItem.querySelector('.active').innerText) 
+  //   }
+  // }
 };
 </script>
 <style lang="less" scoped>

@@ -38,6 +38,10 @@ module.exports = {
         name: 'index',
         path: '/',
         component: 'pages/index/index/p/_page/index.vue'
+      },{
+        name: 'correct',
+        path: '/correct',
+        component: 'pages/correct/index/p/_page/index.vue'
       })
     }
   }

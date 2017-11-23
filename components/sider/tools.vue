@@ -3,8 +3,8 @@
     <div class="sider-tools">
         <div class="title">步知工具集</div>
         <div class="tool-con">
-            <a class="tool-item tool-item-foucs" href="#"><i class="icon icon-dayin"></i>打印社<span class="detail-txt">(18本公益资料)</span></a>
-            <a class="tool-item" href="#"><i class="icon icon-live"></i>直播间<span class="detail-txt detail-txt-red">(花木君直播中)</span></a>
+            <a class="tool-item tool-item-foucs" href="http://g.buzhi.com/course/user/printShow" target="_blank"><i class="icon icon-dayin"></i>打印社<span class="detail-txt">(18本公益资料)</span></a>
+            <a class="tool-item" href="http://g.buzhi.com/course/user/liveShow" target="_blank"><i class="icon icon-live"></i>直播间<span class="detail-txt detail-txt-red">(花木君直播中)</span></a>
             <a class="tool-item" href="/correct"><i class="icon icon-sl"></i>申论批改<span class="detail-txt">(第12期进行中)</span></a>
         </div>
     </div>

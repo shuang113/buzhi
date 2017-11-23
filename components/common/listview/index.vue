@@ -1,5 +1,5 @@
 <template>
-    <div class="hd-block content-bd">
+    <div class="content-bd">
         <!-- 社区首页内容 板块选择 -->
         <div class="bd-menu clearfix" v-show="isTabMenu">
             <div class="menu-content">
@@ -15,10 +15,10 @@
         </div>
         <!-- 社区首页内容 帖子列表 -->
         <div class="bd-content">
-            <div class="post-item" v-for="(item,index) in datalist" :key="index" ref="postItem">
+            <div class="post-item" v-for="(item,index) in datalist.list" :key="index" ref="postItem">
                 <div class="post-avatar" @mouseenter="showUser(item.user_id,index)" @mouseleave="currentItem = 1000">
                   <div class="avatar-img">
-                      <img :src="item.avatar">
+                      <img :src="changeImg(item.img)">
                       <transition name="slide-bottom">
                         <div class="avatar-detail-loading" v-show="currentItem === index">
                           <img src="~assets/images/loading.gif">
@@ -69,19 +69,22 @@
                       </transition>
                   </div>
                 </div>
-                <div class="post-info" @click="clickItem(item.fid,item.id)">
-                    <a class="title" href="#">
+                <div class="post-info">
+                    <nuxt-link class="title" :to="`/thread/${item.id}`">
                       <!-- <span class="post-tag post-tag-red">置顶</span>
                       <span class="post-tag post-tag-yellow">精华</span> -->
                       <span class="txt">{{item.title}}</span>
-                    </a>
+                      <!-- <span class="red-review-babel review-babel" v-if="申论批改场">进行中</span>
+                      <span class="yellow-review-babel review-babel">即将开始</span>
+                      <span class="gray-review-babel review-babel">已结束</span> -->
+                    </nuxt-link>
                     <p class="desc" v-if="item.desc">{{item.desc}}</p>
                     <p class="detail">
-                      <span class="author">
-                        {{item.cnname}}
+                      <span class="author">{{item.cnname}}
+                        <img :src="changeImg(i.course_ico)" :alt="i.course_name" v-for="(i,k) in item.vip_ico">
                         <!-- <img src="~assets/images/label-teacher.png" class="label"> -->
                       </span>
-                      <span class="time">{{item.zan_num}}人赞同 · {{item.post_num}}个回复 · {{item.hit_num}}次浏览 · 53秒前</span>
+                      <span class="time">{{item.zan_num}}人赞同 · {{item.post_num}}个回复 · {{item.hit_num}}次浏览 · {{item.created_time}}</span>
                     </p>
                 </div>
             </div>
@@ -165,13 +168,21 @@ export default {
       if(index === this.current) return
       this.current = index
       this.$emit("goto",index)
+    },
+    changeImg(url){
+      if(url !== undefined || url !== null){
+        return '/images/default-avatar.png'
+        // return url.replace(/http\w{0,1}:\/\/gk/g,'https://images.weserv.nl/?url=gk');
+      }
     }
   }
 }
 </script>
 <style lang="less" scoped>
 @import "~assets/style/variable.less";
+@import "~assets/style/mixin.less";
 .content-bd {
+  .sider-item;
   .bd-menu {
     height: 48px;
     line-height: 48px;
@@ -296,6 +307,8 @@ export default {
       .author {
         margin-right: 30px;
         img {
+          width:15px;
+          height:15px;
           vertical-align: sub;
           margin-left: 3px;
         }
