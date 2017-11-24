@@ -1,21 +1,20 @@
 <template>
-<section>
     <!-- 右侧边栏 头像 -->
-    <div class="sider-avatar sider-item">
+    <div class="sider-avatar sider-item" v-show="typeof(userinfo) !== '{}'">
         <div class="avater-detail">
             <div class="avatar-header">
                 <div class="avatar-pic">
-                    <img :src="changeImg(user.avatar)">
+                    <img :src="changeImg(userinfo.avatar)">
                 </div>
                 <div class="avatar-name">
-                  {{user.nickname}}
-                  <img :src="changeImg(item.course_ico)" class="label" v-for="(item,index) in user.course_name_ico" :key="index" :alt="item.course_name"/>
+                  {{userinfo.nickname}}
+                  <img :src="changeImg(item.course_ico)" class="label" v-for="(item,index) in userinfo.course_name_ico" :key="index" :alt="item.course_name"/>
                 </div>
-                <div class="avatar-motto" v-if="user.info">{{user.info}}</div>
+                <div class="avatar-motto" v-if="userinfo.info">{{userinfo.info}}</div>
                 <div class="avatar-motto" v-else>从未停止求知的脚步!</div>
             </div>
-            <ul class="avatar-goods clearfix" v-show="!user.prize_ico">
-              <li class="goods-item" v-for="(item,index) in user.prize_ico" :key="index">
+            <ul class="avatar-goods clearfix" v-show="!userinfo.prize_ico">
+              <li class="goods-item" v-for="(item,index) in userinfo.prize_ico" :key="index">
                 <i class="medal" :class="{'medal-7day':item.type}"></i>
               </li>
                 <!-- <li class="goods-item"><i class="medal medal-7day"></i></li>
@@ -36,84 +35,48 @@
         </div>
         <div class="post-nums">
             <a href="#" class="nums-item">
-                <h4 class="total">{{user.posts}}</h4>
+                <h4 class="total">{{userinfo.posts}}</h4>
                 <span class="label">发帖</span>
             </a>
             <a href="#" class="nums-item">
-                <h4 class="total">{{user.replay}}</h4>
+                <h4 class="total">{{userinfo.replay}}</h4>
                 <span class="label">回帖</span>
             </a>
             <a href="#" class="nums-item">
-                <h4 class="total">{{user.praise}}</h4>
+                <h4 class="total">{{userinfo.praise}}</h4>
                 <span class="label">赞同</span>
             </a>
         </div>
     </div>
-    <!-- 社区首页侧栏 签到 -->
-      <div class="sider-qiandao sider-item" v-if="!user.isSign">
-        <span class="time">{{signTime}}</span>
-        <span class="qiandao-btn" @click="goSign(user.uid)">签到</span>
-      </div>
-      <div class="sider-qiandao sider-qiandao-had sider-item" v-else>
-        <span class="time">{{signTime}}</span>
-        <br/> <span v-show="user.sign_continuity">连续</span>签到
-        <span class="red" v-if="user.sign_continuity"> {{user.sign_continuity}} </span>
-        <span class="red" v-else> {{user.sign_day}} </span>天
-        <div class="qiandao-btn">
-          <span class="strong">已签到</span>
-          <a href="/sign/top">签到排行榜</a>
-        </div>
-        <transition name="scale-opacity">
-          <div class="sign-dialog" v-show="user.isSign">+1</div>
-        </transition>
-      </div>
-
-    <!-- 签到规则弹窗 -->
-
-</section>
 </template>
 <script>
+import axios from "axios"
+import {STATUS_OK, getUserInfo } from "~/plugins/api"
 export default {
   data () {
     return {
-      signTime:""
+      signTime:"",
+      userinfo:{}
     }
   },
-  props: {
-    user: {
-        type: Object,
-        default:{}
-    }
-  },
-  computed: {
-    signData(){
-      return this.user.sign
-    }
+  async asyncData({ params, error }) {
+    return axios
+      .all([ getUserInfo() ])
+      .then(
+        axios.spread(function(user) {
+          return {
+            userinfo: user.data
+          };
+        })
+      )
+      .catch(error => console.log(error))
   },
   methods: {
-    goSign(uid){
-      // goSign(uid).then()
-      // +1动画
-      this.user.isSign = !this.user.isSign
-    },
-    _getSignTime(){
-      let date = new Date()
-      this.year = date.getFullYear()
-      this.month = date.getMonth() + 1
-      this.date = date.getDate()
-      this.day = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")[date.getDay()]
-      return this.signTime = this.year + "-" + this.month + "-" + this.date + " " + this.day
-    },
     changeImg(url){
       if(url !== undefined || url !== null){
         return '/images/default-avatar.png'
       }
     }
-  },
-  created () {
-    this.$nextTick(()=>{
-      this._getSignTime()
-    })
   }
 }
 </script>
@@ -227,66 +190,5 @@ export default {
       color: @color-blue-l;
     }
   }
-}
-.sider-qiandao {
-    position: relative;
-    height: 58px;
-    line-height: 58px;
-    text-indent: 10px;
-    color: @color-gray-l;
-    font-size: 14px;
-    overflow: visible;
-    .qiandao-btn {
-        position: absolute;
-        right: -2px;
-        top: -2px;
-        width: 96px;
-        height: 58px;
-        line-height: 58px;
-        text-align: center;
-        border: 2px solid @color-blue;
-        background: @color-blue-l;
-        border-radius: 4px;
-        text-indent: 0;
-        font-size: 18px;
-        color: @color-white;
-        cursor: pointer;
-        &:hover {
-            background: @color-blue;
-        }
-    }
-}
-.sider-qiandao-had {
-    padding: 6px 0 6px 13px;
-    height: 46px;
-    line-height: 24px;
-    text-indent: 0;
-    .red {
-        color: #eb5255;
-    }
-    .sign-dialog{
-      position: absolute;
-      left:50%;
-      top:0;
-      font-size:14px;
-      color: #eb5255;
-    }
-    .qiandao-btn {
-        cursor: default;
-        padding: 10px 0 12px;
-        height: 36px;
-        line-height: 14px;
-        background: @color-blue;
-        font-size: 14px;
-        a {
-            color: @color-white;
-        }
-        .strong {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 18px;
-            line-height: 18px;
-        }
-    }
 }
 </style>

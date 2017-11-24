@@ -12,7 +12,7 @@
             <div class="g-mask" v-show="isShowPop">
                 <div class="auto-recommended g-content">
                 <span class="close" @click="isShowPop = !isShowPop"></span>
-                <h3 class="title">Hi~亲爱的<span class="red-txt" v-show="typeof(userinfo)!=='{}'">{{userinfo.nickname}}</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
+                <h3 class="title">Hi~亲爱的<span class="red-txt">用户名占位</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
                 <div class="con-list">
                     <ul class="clearfix">
                     <li class="recommended-item clearfix" v-for="(item,index) in recommends" :key="index">
@@ -38,13 +38,7 @@
             </transition>
         </div>
         <!-- 右侧栏 -->
-        <div class="ask-side">
-            <bz-userinfo v-show="typeof(userinfo)!=='{}'" :user="userinfo"></bz-userinfo>
-            <bz-course></bz-course>
-            <bz-tools></bz-tools>
-            <bz-correct></bz-correct>
-            <bz-read-more></bz-read-more>
-        </div>
+        <bz-rightside></bz-rightside>
     </div>
 </template>
 <script>
@@ -52,13 +46,8 @@ import axios from "axios"
 import BzForum from "~/components/common/forum"
 import BzForumAd from "~/components/common/forum/ad"
 import BzListview from "~/components/common/listview"
+import BzRightside from "~/components/common/right-side"
 import {STATUS_OK, getForumCate, getForumList, getUserInfo, getRecommends} from "~/plugins/api"
-import BzUserinfo from "~/components/sider/side-info"
-import BzCourse from "~/components/sider/course"
-import BzTools from "~/components/sider/tools"
-import BzCorrect from "~/components/sider/correct"
-import BzReadMore from "~/components/sider/readmore"
-
 import {setToken} from "~/plugins/utils"
 export default {
    head() {
@@ -81,7 +70,6 @@ export default {
   data() {
     return {
       headTitle:"",
-      userinfo: {},      //用户信息
       datalist:{},      //全部帖子列表数据
       isShowPop: false,  //是否显示关注弹窗
       recommends:[],    //推荐关注列表
@@ -92,21 +80,17 @@ export default {
     BzForum,
     BzForumAd,
     BzListview,
-    BzUserinfo,
-    BzCourse,
-    BzTools,
-    BzCorrect,
-    BzReadMore
+    BzRightside
   },
   methods: {
-    _getUserInfo() {
-      // 获取userinfo信息
-      getUserInfo().then(res=>{
-        if(res.status === "1"){
-          this.userinfo = res.data
-        }
-      })
-    },
+    // _getUserInfo() {
+    //   // 获取userinfo信息
+    //   getUserInfo().then(res=>{
+    //     if(res.status === "1"){
+    //       this.userinfo = res.data
+    //     }
+    //   })
+    // },
     _getRecommends(){
       // 获取recommends信息
       getRecommends().then(res=>{
@@ -124,7 +108,7 @@ export default {
   },
   created() {
     this.$nextTick(() => {
-      this._getUserInfo()
+      // this._getUserInfo()
       this._getRecommends()
     })
   }

@@ -1,539 +1,471 @@
 <template>
-    <div class="container clearfix">
-        <div class="discuss-main">
-            <div class="discuss-detail">
-              <div class="dd-post">
+<div class="container clearfix">
+    <div class="article-wrapper">
+        <div class="discuss-detail">
+            <div class="dd-post">
                 <div class="dd-post-title">
-                  <h3>30天冲刺，你的申论必须这样学！（准备放个大“套路”）</h3>
-                  <div class="clearfix title-info">
-                    <span class="fl">作者：常山赵子龙 |  发表于2017-02-24</span>
-                    <span class="fr">浏览：3886   |   回复：112</span>
-                  </div>
+                    <h3>申论75+ 和 行测80+ 哪个更难？</h3>
+                    <div class="clearfix title-info">
+                        <span class="fl">作者：社长北非的盐 | 发表于2017-11-23</span>
+                        <span class="fr">浏览：1187 | 回复：145</span>
+                    </div>
                 </div>
                 <div class="dd-post-content">
-                  <div class="dd-post-content-area">帖子编辑区域</div>
-                  <a href="#" class="dd-good-btn"><i class="detail-icon red-zan-icon"></i>赞 (1314)</a>
-                  <div class="dd-good-list">
-                    <!-- <ul class="clearfix">
-                      <li class="good-list-item"><a href="#"><img src="/images/default-avatar.png" alt=""></a></li>
-                      <li class="good-list-item"><a href="#"><img src="http://p1.music.126.net/ZUxPOOudbuqLUGqv6WD7jQ==/18635622581056767.jpg?param=200y200" alt=""></a></li>
-                      <li class="good-list-item"><a href="#"><img src="http://p1.music.126.net/ZUxPOOudbuqLUGqv6WD7jQ==/18635622581056767.jpg?param=200y200" alt=""></a></li>
-                      <li class="good-list-item"><a href="#"><img src="http://p1.music.126.net/ZUxPOOudbuqLUGqv6WD7jQ==/18635622581056767.jpg?param=200y200" alt=""></a></li>
-                    </ul> -->
-                  </div>
-                  <div class="dd-post-tool">
-                    <p class=" clearfix">
-                      <a href="#" class="active">收藏帖子</a>
-                      <i class="divider"></i>
-                      <a href="#">分享帖子</a>
-                      <i class="divider"></i>
-                      <a href="#">举报帖子</a>
-                    </p>
-                  </div>
+                    <div class="dd-post-content-area">
+                        <p>今天长沙出大太阳了，贼舒服，相信我的感冒很快就会好了，啊哈哈。</p>
+                        <p>所以上午心情也好了不少，然后和羚羊、花木两位老师互动了一下：</p>
+                        <p>
+                            <strong>你们觉得这次国考，大家哪科会考得好一些？</strong>
+                        </p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>然后——</p>
+                        <p>然后，就炸了！</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p style="text-align: center;">
+                            <img data-original="http://gkimg.buzhi.com/Uploads/ueditor/image/20171123/1511406031605697.jpg" alt="选择.jpg"
+                                src="http://gkimg.buzhi.com/Uploads/ueditor/image/20171123/1511406031605697.jpg" style="display: inline;">
+                        </p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>大咖老师各执己见，甚至各方助教老师都参与进来。</p>
+                        <p>行测助教吴宴祖：那肯定行测考得好一些啊，咱们羚羊老师这么厉害，小伙伴们也参加了这么多模考，课程也学了那么多，70+妥妥的，80+肯定也不少。</p>
+                        <p>申论助教糖果老师：花木君老师从来的小目标就是申论70+，这也是很多次考试都验证了的，不管什么考试，只要是跟着花木君系统学习的，65+是基本保障，70+是小目标，75+一抓一大把。
+                            <br>
+                        </p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>这——</p>
+                        <p>夹在中间的我实在无法调解了，我很后悔抛出这个让我此刻非常头大的问题！！！</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>小伙伴们，能帮帮我吗？</p>
+                        <p>
+                            <br>
+                        </p>
+                        <blockquote>
+                            <p style="text-align: center;">
+                                <strong>申论75+</strong>&nbsp; 和&nbsp;
+                                <strong>行测80+</strong>&nbsp; 哪个更难？
+                                <br>
+                            </p>
+                        </blockquote>
+                        <p>
+                            <br>
+                        </p>
+                        <p>
+                            <strong>PS：</strong>
+                        </p>
+                        <p>1、基于同一类型考试做对比。（比如国考中、XX省考中等）</p>
+                        <p>2、适当给出一个更难的理由或者另一个相对简单的原因，我好用来说服咱们的大咖老师们。</p>
+                        <p>
+                            <br>
+                        </p>
+                        <p>燥起来~
+                            <br>
+                        </p>
 
+                    </div>
+                    <a href="javascript:;" class="dd-good-btn js-zan-action" data-zan="0" data-id="9118">
+                        <i class="detail-icon red-zan-icon"></i>赞 (65)</a>
+                    <div class="dd-good-list">
+                        <ul class="clearfix js-zan-list">
+                            <li class="good-list-item">
+                                <a href="/user?uid=31645" target="_blank">
+                                    <img src="/images/default-avatar.png"
+                                        title="coco" alt="coco">
+                                </a>
+                            </li>
+                            <li class="good-list-item">
+                                <a href="/user?uid=31645" target="_blank">
+                                    <img src="/images/default-avatar.png"
+                                        title="coco" alt="coco">
+                                </a>
+                            </li>
+                            <li class="good-list-item">
+                                <a href="/user?uid=31645" target="_blank">
+                                    <img src="/images/default-avatar.png"
+                                        title="coco" alt="coco">
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="dd-review-toolbar">
+                        <a href="javascript:;" class="review-toolbar-item js-collect">
+                            <i class="collect"></i>收藏帖子</a>
+                        <i class="divider"></i>
+                        <div class="review-toolbar-item">
+                            <a href="javascript:;" class="js-share-tool-btn">
+                                <i class="share"></i>分享帖子</a>
+                            <div class="new-share js-share-tool-box" style="display:none;">
+                                <a class="qzone js-share-qq" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://ask.buzhi.com/thread/9118&amp;title=申论75+  和  行测80+  哪个更难？&amp;desc=申论75+  和  行测80+  哪个更难？&amp;pics=&amp;site=步知公考"
+                                    target="_blank">QQ空间</a>
+                                <a class="micro-blog js-share-weibo" href="http://service.weibo.com/share/share.php?url=http://ask.buzhi.com/thread/9118&amp;title=申论75+  和  行测80+  哪个更难？"
+                                    target="_blank">新浪微博</a>
+                                <dl>
+                                    <dt>微信扫一扫</dt>
+                                    <dd id="js-canvas">
+                                        <canvas width="95" height="95"></canvas>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="dd-post-label">
-                  <dl class="post-label-area clearfix">
-                    <dt>标签：</dt>
-                    <dd><a href="#">花木君</a></dd>
-                    <dd><a href="#">申论学习</a></dd>
-                  </dl>
+                    <dl class="post-label-area clearfix">
+                        <dt>标签：</dt>
+                        <dd>
+                            <a href="/topic/42" target="_blank">社长专栏</a>
+                        </dd>
+                    </dl>
                 </div>
-                <span class="dd-post-tag"></span>
-              </div>
-              <div class="dd-reply">
-                <div class="reply-topbar  clearfix">
-                  <div class="text-area">
-                    <h3>全部13个回复</h3>
-                    <div class="choose-btn">
-                      <p class="choose-area">默认排序</p>
-                      <ul class="choose-list">
+            </div>
 
-                      </ul>
+            <!--评论-->
+            <div id="hidden-go" style="height:1px;"></div>
+            <div id="app" class="dd-reply">
+                <div class="js-reply-header">
+                    <div class="clearfix reply-topbar">
+                        <div class="text-area">
+                            <h3>全部145个回复</h3>
+                            <div class="choose-btn">
+                                <p class="choose-area">默认排序
+                                    <img src="http://g.public.midasjoy.com/Public/discuss/v2/images/typechoose.png" alt="">
+                                </p>
+                                <ul class="choose-list" style="display: none;">
+                                    <li class="list-item">
+                                        <a href="javascript:void(0);">默认排序</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a href="javascript:void(0);">时间排序</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a href="javascript:void(0);">点赞排序</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area">
+                            <a href="javascript:void(0);" class="reply-post-btn">
+                                <i class="detail-icon white-discuss-icon"></i>回帖</a>
+                        </div>
                     </div>
-                  </div>
-                  <div class="btn-area">
-                    <a href="#" class="reply-post-btn"><i class="detail-icon white-discuss-icon"></i>回帖</a>
-                  </div>
-                </div>
-                <div class="reply-list">
-                  <ul>
-                    <li class="reply-list-item">
-                      <div class="list-content">
-                        <div class="reply-avatar">
-                          <div class="reply-avatar-con">
-                            <img class="avatar-pic" src="/images/default-avatar.png">
-                            <span class="score"><i class="detail-icon star-icon"></i>388</span>
-                            
-                            <!-- <div class="avatar-detail">
-                              <div class="avatar-detail-info clearfix">
-                                <div class="big-avatar">
-                                  <img src="/images/default-avatar.png">
-                                  <span class="score"><i class="detail-icon star-icon"></i>388</span>
+                    <div class="reply-editer clearfix" style="display: none;">
+                        <div class="reply-editer-con">
+                            <div id="reply-content" class="edui-default" style="">
+                                <div id="edui1" class="edui-editor  edui-default" style="width: 100%; z-index: 200;">
+                                    <div id="edui1_toolbarbox" class="edui-editor-toolbarbox edui-default">
+                                        <div id="edui1_toolbarboxouter" class="edui-editor-toolbarboxouter edui-default">
+                                            <div class="edui-editor-toolbarboxinner edui-default">
+                                                <div id="edui2" class="edui-toolbar   edui-default" onselectstart="return false;"
+                                                    onmousedown="return $EDITORUI[&quot;edui2&quot;]._onMouseDown(event, this);"
+                                                    style="user-select: none;">
+                                                    <div id="edui3" class="edui-box edui-button edui-for-simpleupload edui-default">
+                                                        <div id="edui3_state" onmousedown="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseDown(event, this);"
+                                                            onmouseup="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseUp(event, this);"
+                                                            onmouseover="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOver(event, this);"
+                                                            onmouseout="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOut(event, this);"
+                                                            class="edui-default">
+                                                            <div class="edui-button-wrap edui-default">
+                                                                <div id="edui3_body" unselectable="on" title="单图上传" class="edui-button-body edui-default"
+                                                                    onmousedown="return $EDITORUI[&quot;edui3&quot;]._onMouseDown(event, this);"
+                                                                    onclick="return $EDITORUI[&quot;edui3&quot;]._onClick(event, this);">
+                                                                    <div class="edui-box edui-icon edui-default">
+                                                                        <iframe style="display: block; width: 20px; height: 20px; overflow: hidden; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; opacity: 0; cursor: pointer;"></iframe>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="edui4" class="edui-box edui-splitbutton edui-for-emotion edui-default">
+                                                        <div title="表情" id="edui4_state" onmousedown="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseDown(event, this);"
+                                                            onmouseup="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseUp(event, this);"
+                                                            onmouseover="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOver(event, this);"
+                                                            onmouseout="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOut(event, this);"
+                                                            class="edui-default">
+                                                            <div class="edui-splitbutton-body edui-default">
+                                                                <div id="edui4_button_body" class="edui-box edui-button-body edui-default"
+                                                                    onclick="$EDITORUI[&quot;edui4&quot;]._onButtonClick(event, this);">
+                                                                    <div class="edui-box edui-icon edui-default"></div>
+                                                                </div>
+                                                                <div class="edui-box edui-splitborder edui-default"></div>
+                                                                <div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui4&quot;]._onArrowClick();"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="edui1_toolbarmsg" class="edui-editor-toolbarmsg edui-default" style="display:none;">
+                                            <div id="edui1_upload_dialog" class="edui-editor-toolbarmsg-upload edui-default"
+                                                onclick="$EDITORUI[&quot;edui1&quot;].showWordImageDialog();">点击上传</div>
+                                            <div class="edui-editor-toolbarmsg-close edui-default" onclick="$EDITORUI[&quot;edui1&quot;].hideToolbarMsg();">x</div>
+                                            <div id="edui1_toolbarmsg_label" class="edui-editor-toolbarmsg-label edui-default"></div>
+                                            <div style="height:0;overflow:hidden;clear:both;" class="edui-default"></div>
+                                        </div>
+                                        <div id="edui1_message_holder" class="edui-editor-messageholder edui-default" style="top: 3px; z-index: 201;"></div>
+                                    </div>
+                                    <div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default" style="width: 100%; height: 230px; z-index: 200; overflow: hidden;">
+                                        <!-- 回帖输入框 -->
+                                    </div>
+                                    <div id="edui1_bottombar" class="edui-editor-bottomContainer edui-default">
+                                        <table class="edui-default">
+                                            <tbody class="edui-default">
+                                                <tr class="edui-default">
+                                                    <td id="edui1_elementpath" class="edui-editor-bottombar edui-default" style="display: none;"></td>
+                                                    <td id="edui1_wordcount" class="edui-editor-wordcount edui-default"
+                                                        style="display: none;"></td>
+                                                    <td id="edui1_scale" class="edui-editor-scale edui-default" style="display: none;">
+                                                        <div class="edui-editor-icon edui-default"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="edui1_scalelayer" class="edui-default"></div>
                                 </div>
-                                <div class="info-desc">
-                                  <h3 class="name">天亮了黎明<img src="/images/default-avatar.png" class="label"></h3>
-                                  <p class="desc">一生之中弯弯曲曲总会有靓丽的风景让我们学会珍惜</p>
-                                  <ul class="label-list clearfix">
-                                    <li class="label-item"><a href="#"><i class="medal medal-7day"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-30day"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-60day"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-120day"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-100question"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-200question"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-300question"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-fan1"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-fan3"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-fan5"></i></a></li>
-                                    <li class="label-item"><a href="#"><i class="medal medal-sword"></i></a></li>
-                                    <li class="label-item"><a href="#"><span class="dots">...</span></a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="avatar-links">
-                                <a href="#" class="link-item">
-                                  <h3 class="num">108</h3>
-                                  <p class="txt">发帖</p>
-                                </a>
-                                <i class="divider"></i>
-                                <a href="#" class="link-item">
-                                  <h3 class="num">108</h3>
-                                  <p class="txt">回帖</p>
-                                </a>
-                                <i class="divider"></i>
-                                <a href="#" class="link-item">
-                                  <h3 class="num">108</h3>
-                                  <p class="txt">赞同</p>
-                                </a>
-                              </div>
-                            </div> -->
-                          </div>
-
-                        </div>
-                        <div class="reply-text">
-                          <div class="reply-name">常山赵子龙<img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"></div>
-                          <div class="reply-text-con">
-                            <p>一个窗口看尽人生百态，有幸福有辛酸，生活这样才有滋有味，自己的人生也是百态中一个，为自己的梦想而奋斗就是活出自己人生的精彩，赞一个~~</p>
-                          </div>
-                          <div class="reply-tool clearfix">
-                            <a href="#" class="zan-btn"><i class="detail-icon dian-zan-btn"></i>16</a>
-                            <p class="click-list">
-                              <span class="click-item">
-                                <i class="click-icon click-reply"></i>5个评论
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-share"></i>分享
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-report"></i>举报
-                              </span>
-                            </p>
-                            <span class="time">2017-03-01</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="reply-list-item">
-                      <div class="list-content">
-                        <div class="reply-avatar">
-                          <div class="reply-avatar-con">
-                            <img class="avatar-pic" src="/images/default-avatar.png">
-                            <span class="score"><i class="detail-icon star-icon"></i>388</span>
-                          </div>
-
-                        </div>
-                        <div class="reply-text">
-                          <div class="reply-name">常山赵子龙<img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"></div>
-                          <div class="reply-text-con">
-                            <p>一个窗口看尽人生百态，有幸福有辛酸，生活这样才有滋有味，自己的人生也是百态中一个，为自己的梦想而奋斗就是活出自己人生的精彩，赞一个~~</p>
-                          </div>
-                          <div class="reply-tool clearfix">
-                            <a href="#" class="zan-btn">16</a>
-                            <p class="click-list">
-                              <span class="click-item">
-                                <i class="click-icon click-reply"></i>5个评论
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-share"></i>分享
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-report"></i>举报
-                              </span>
-                            </p>
-                            <span class="time">2017-03-01</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="reply-list-item">
-                      <div class="list-content">
-                        <div class="reply-avatar">
-                          <div class="reply-avatar-con">
-                            <img class="avatar-pic" src="/images/default-avatar.png">
-                            <span class="score"><i class="detail-icon star-icon"></i>388</span>
-                            
-                          </div>
-
-                        </div>
-                        <div class="reply-text">
-                          <div class="reply-name">常山赵子龙<img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"></div>
-                          <div class="reply-text-con">
-                            <p>一个窗口看尽人生百态，有幸福有辛酸，生活这样才有滋有味，自己的人生也是百态中一个，为自己的梦想而奋斗就是活出自己人生的精彩，赞一个~~</p>
-                          </div>
-                          <div class="reply-tool clearfix">
-                            <a href="#" class="zan-btn">16</a>
-                            <p class="click-list">
-                              <span class="click-item">
-                                <i class="click-icon click-reply"></i>5个评论
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-share"></i>分享
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-report"></i>举报
-                              </span>
-                            </p>
-                            <span class="time">2017-03-01</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="reply-list-item">
-                      <div class="list-content">
-                        <div class="reply-avatar">
-                          <div class="reply-avatar-con">
-                            <img class="avatar-pic" src="/images/default-avatar.png">
-                            <span class="score"><i class="detail-icon star-icon"></i>388</span>
-                            
-                          </div>
-
-                        </div>
-                        <div class="reply-text">
-                          <div class="reply-name">常山赵子龙<img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"></div>
-                          <div class="reply-text-con">
-                            <p>一个窗口看尽人生百态，有幸福有辛酸，生活这样才有滋有味，自己的人生也是百态中一个，为自己的梦想而奋斗就是活出自己人生的精彩，赞一个~~</p>
-                          </div>
-                          <div class="reply-tool clearfix">
-                            <a href="#" class="zan-btn">16</a>
-                            <p class="click-list">
-                              <span class="click-item">
-                                <i class="click-icon click-reply"></i>收起评论
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-share"></i>分享
-                              </span>
-                              <span class="click-item">
-                                <i class="click-icon click-report"></i>举报
-                              </span>
-                            </p>
-                            <span class="time">2017-03-01</span>
-                          </div>
-                          <div class="send-post-area">
-                            <div class="input-box">
-                              <input type="text" name="" value="" placeholder="等一个神回复…">
-                              <a href="#" class="send-link">确定</a>
                             </div>
-                            <div class="reply-react-box">
-                              <div class="reply-normal-box clearfix">
-                                <div class="reply-normal-avatar">
-                                  <img src="/images/default-avatar.png">
-                                </div>
-                                <div class="reply-normal-text">
-                                  <div class="text-con">
-                                    <span class="name">警务处处长<img src="/images/default-avatar.png" ></span>:  老师，买了课程准备考422，但是不知道每天听多久，上多长时间的课，不知道怎么安排自己的时间？有什么建议吗？
-                                  </div>
-                                  <div class="info-bar clearfix">
-                                    <span class="info-time">2017-03-13 11:54</span>
-                                    <a href="#" class="info-reply">回复</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="reply-normal-box clearfix">
-                                <div class="reply-normal-avatar">
-                                  <img src="/images/default-avatar.png">
-                                </div>
-                                <div class="reply-normal-text">
-                                  <div class="text-con">
-                                    <span class="name">警务处处长<img src="/images/default-avatar.png" ></span>回复<span class="name">警务处处长<img src="/images/default-avatar.png" ></span>:  老师，买了课程准备考422，但是不知道每天听多久，上多长时间的课，不知道怎么安排自己的时间？有什么建议吗？
-                                  </div>
-                                  <div class="info-bar clearfix">
-                                    <span class="info-time">2017-03-13 11:54</span>
-                                    <a href="#" class="info-reply">回复</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="input-box">
-                                <input type="text" name="" value="" placeholder="等一个神回复…">
-                                <a href="#" class="send-link">确定</a>
-                              </div>
-                              <div class="reply-normal-box clearfix reply-react-box-last">
-                                <div class="reply-normal-avatar">
-                                  <img src="/images/default-avatar.png">
-                                </div>
-                                <div class="reply-normal-text">
-                                  <div class="text-con">
-                                    <span class="name">警务处处长<img src="/images/default-avatar.png" ></span>回复<span class="name">警务处处长<img src="/images/default-avatar.png" ></span>:  老师，买了课程准备考422，但是不知道每天听多久，上多长时间的课，不知道怎么安排自己的时间？有什么建议吗？
-                                  </div>
-                                  <div class="info-bar clearfix">
-                                    <span class="info-time">2017-03-13 11:54</span>
-                                    <a href="#" class="info-reply">回复</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                    </li>
-                  </ul>
+                        <a href="javascript:void(0);" class="editor-btn js-editor-btn">回复</a>
+                        <a href="javascript:void(0);" class="js-dropup-btn" style="float: right; margin-top: 20px; color: rgb(136, 136, 136); margin-right: 20px; line-height: 34px; font-size: 14px;">收起</a>
+                    </div>
                 </div>
-                <div class="reply-load-more">
-                  <a href="#">展开更多…</a>
+                <div class="reply-after">
+                    <div>
+                        <div class="reply-list">
+                            <ul>
+                                <li class="reply-list-item">
+                                    <div class="list-content">
+                                        <div class="reply-avatar">
+                                            <div data-id="33" data-off="0" class="reply-avatar-con">
+                                                <a href="/user?uid=33" target="_blank">
+                                                    <img src="/images/default-avatar.png"
+                                                        class="avatar-pic">
+                                                </a>
+                                                <span class="score"><i class="detail-icon star-icon"></i>1208</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply-text">
+                                            <div class="reply-name">
+                                                <a href="/user?uid=33" target="_blank">申论花木君</a>
+                                                <img src="/images/default-avatar.png" title="老师">
+                                            </div>
+                                            <div class="reply-text-con">
+                                                <p>
+                                                    <p>　　这是一个相对的问题</p>
+                                                    <p>　　不同的角度，不同的立场，给出的答案会不同</p>
+                                                    <p>　　1，从公考自身的要求看</p>
+                                                    <p>　　(1)报考中央机关综合管理类职位的合格分数线为：总分不低于110分，且行政职业能力测验不低于60分。</p>
+                                                    <p>　　申论75+，意味着40分的作文要拿到30分以上，60分的基础题要拿到45分以上。行测80+，意味着做错的题目不超过15道。从单纯的概率来讲，申论一道题答的不好，基本75+就彻底没戏。</p>
+                                                    <p>　　综合而言，我个人认为，国考中申论75+难度更大一些。希望大家扎扎实实学习，越来越多的伙伴申论突破70，行测突破75吧，最起码上岸的希望更大。</p>
+                                                </p>
+                                            </div>
+                                            <div class="reply-tool clearfix">
+                                                <a href="javascript:void(0);" class="zan-btn">
+                                                    <i class="detail-icon dian-zan-btn"></i>7</a>
+                                                <div class="click-list">
+                                                    <span class="click-item" style="display: none;">
+                                                        <i class="click-icon click-reply"></i>10条评论
+                                                    </span>
+                                                    <span class="click-item">
+                                                        <i class="click-icon click-reply"></i>收起评论
+                                                    </span>
+                                                    <span class="click-item">
+                                                        <i class="click-icon click-report"></i>举报
+                                                    </span>
+                                                    <span class="click-item">
+                                                        <i class="click-icon click-send"></i>回复
+                                                    </span>
+                                                    <div class="invite-box" style="display: none;">
+                                                        <div class="title clearfix">
+                                                            <h2>我关注的用户</h2>
+                                                            <div class="search-area" style="display: none;">
+                                                                <input type="text" placeholder="可搜索用户名" value="" class="search-input js-key">
+                                                                <a href="javascript:;" data-type="other" class="search-btn js-search">
+                                                                    <i class="search-icon"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="invite-list clearfix"></div>
+                                                        <div class="invite-bar">
+                                                            <a href="javascript:void(0);" class="sure-btn">确认邀请</a>
+                                                            <a href="javascript:void(0);">取消</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="time">2017-11-23 11:04</span>
+                                            </div>
+                                            <div class="send-post-area">
+                                                <div class="input-box" style="display: none;">
+                                                    <div class="auto-textarea">
+                                                        <textarea placeholder="等一个神回复…"></textarea>
+                                                        <pre><span></span><br></pre>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="send-link">确定</a>
+                                                </div>
+                                                <div class="reply-react-box">
+                                                    <div class="reply-normal-box">
+                                                        <div class="reply-normal-box-con clearfix">
+                                                            <div class="reply-normal-avatar">
+                                                                <img src="/images/default-avatar.png">
+                                                            </div>
+                                                            <div class="reply-normal-text">
+                                                                <div class="text-con">
+                                                                    <span class="name">勇往直前自强不息
+                                                                        <img src="/images/default-avatar.png"
+                                                                            title="花木君 · 主讲申论">
+                                                                    </span>
+                                                                    :
+                                                                    <span>我是真心感觉申论上65都难。</span>
+                                                                </div>
+                                                                <div class="info-bar clearfix">
+                                                                    <span class="info-time">2017-11-23 12:26</span>
+                                                                    <a href="javascript:void(0);" class="info-reply" style="display: none;">回复</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner-input-box" style="display: none;">
+                                                            <div class="auto-textarea">
+                                                                <textarea placeholder="等一个神回复…"></textarea>
+                                                                <pre><span></span><br></pre>
+                                                            </div>
+                                                            <a href="javascript:void(0);" class="send-link">确定</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply-normal-box">
+                                                        <div class="reply-normal-box-con clearfix">
+                                                            <div class="reply-normal-avatar">
+                                                                <img src="/images/default-avatar.png">
+                                                            </div>
+                                                            <div class="reply-normal-text">
+                                                                <div class="text-con">
+                                                                    <span class="name">潭州鸿昭
+                                                                        <img src="/images/default-avatar.png"
+                                                                            title="花木君 · 主讲申论">
+                                                                    </span>:
+                                                                    <span>认同花木君的，申论更需要思维，更加耗费脑力，感觉不比高数容易。</span>
+                                                                </div>
+                                                                <div class="info-bar clearfix">
+                                                                    <span class="info-time">2017-11-23 15:08</span>
+                                                                    <a href="javascript:void(0);" class="info-reply" style="display: none;">回复</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner-input-box" style="display: none;">
+                                                            <div class="auto-textarea">
+                                                                <textarea placeholder="等一个神回复…"></textarea>
+                                                                <pre><span></span><br></pre>
+                                                            </div>
+                                                            <a href="javascript:void(0);" class="send-link">确定</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply-normal-box">
+                                                        <div class="reply-normal-box-con clearfix">
+                                                            <div class="reply-normal-avatar">
+                                                                <img src="/images/default-avatar.png">
+                                                            </div>
+                                                            <div class="reply-normal-text">
+                                                                <div class="text-con">
+                                                                    <span class="name">申论花木君
+                                                                        <img src="/images/default-avatar.png"
+                                                                            title="老师">
+                                                                    </span>
+                                                                    <div style="display: inline;">回复
+                                                                        <span class="name"> 潭州鸿昭</span>
+                                                                    </div>:
+                                                                    <span>哈哈，这个还是需要因人而异。
+                                                                        <br> 比如本身学习的就是统计学的妹子，很大概率会觉得行测容易，申论难。
+                                                                        <br> 而学的法学、中文等妹子，往往会觉得申论要容易些。
+                                                                    </span>
+                                                                </div>
+                                                                <div class="info-bar clearfix">
+                                                                    <span class="info-time">2017-11-23 15:12</span>
+                                                                    <!---->
+                                                                    <!---->
+                                                                    <!---->
+                                                                    <a href="javascript:void(0);" class="info-reply" style="display: none;">回复</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner-input-box" style="display: none;">
+                                                            <div class="auto-textarea">
+                                                                <textarea placeholder="等一个神回复…"></textarea>
+                                                                <pre><span></span><br></pre>
+                                                            </div>
+                                                            <a href="javascript:void(0);" class="send-link">确定</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="reply-load-more">
+                            <a href="javascript:;" class="loading-more js-load-more">再来一打…</a>
+                            <a href="javascript:;" class="loading-more js-load-more" style="display: none;">我是有底线的</a>
+                            <a href="javascript:void(0);" class="loading-more js-load-more" style="display: none;">
+                                <img src="http://g.public.midasjoy.com/Public/discuss/v2/images/bottom-loading.gif" alt="">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="reply-editer clearfix">
-                <div class="reply-editer-con">
-                  哲理是放编辑器的
+                <div class="reply-before" style="min-height: 600px; display: none;">
+                    <img src="http://g.public.midasjoy.com/Public/common/images/bzloading.gif" style="width: 120px; height: 120px;">
                 </div>
-                <a href="#" class="editor-btn">回复</a>
-              </div>
             </div>
         </div>
-        <div class="discuss-side">
-            <div class="discuss-avatar side-item">
-                <div class="avater-detail">
-                    <div class="avatar-header">
-                        <div class="avatar-pic">
-                            <img src="/images/default-avatar.png">
-                            <span class="LV">LV.3</span>
-                        </div>
-                        <div class="avatar-name">常山赵子龙<img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"><img src="/images/default-avatar.png" class="label"></div>
-                        <div class="avatar-say">今夜闻君琵琶语，如听仙乐耳暂明<br>莫辞更坐弹一曲</div>
-                    </div>
-                    <div class="avatar-goods clearfix">
-                        <ul>
-                            <li class="goods-item"><i class="medal medal-7day"></i></li>
-                            <li class="goods-item"><i class="medal medal-30day"></i></li>
-                            <li class="goods-item"><i class="medal medal-60day"></i></li>
-                            <li class="goods-item"><i class="medal medal-120day"></i></li>
-                            <li class="goods-item"><i class="medal medal-100question"></i></li>
-                            <li class="goods-item"><i class="medal medal-200question"></i></li>
-                            <li class="goods-item"><i class="medal medal-300question"></i></li>
-                            <li class="goods-item"><i class="medal medal-fan1"></i></li>
-                            <li class="goods-item"><i class="medal medal-fan3"></i></li>
-                            <li class="goods-item"><i class="medal medal-fan5"></i></li>
-                            <li class="goods-item"><i class="medal medal-sword"></i></li>
-                            <li class="goods-item"><i class="medal medal-eye"></i></li>
-                            <li class="goods-item"><i class="medal medal-bulb"></i></li>
-                            <li class="goods-item"><i class="medal medal-ship"></i></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="avatar-nums">
-                    <a href="#" class="nums-item">
-                        <h4>108</h4>
-                        <span>发帖</span>
-                    </a>
-                    <span class="nums-divider"></span>
-                    <a href="#" class="nums-item">
-                        <h4>329</h4>
-                        <span>回帖</span>
-                    </a>
-                    <span class="nums-divider"></span>
-                    <a href="#" class="nums-item">
-                        <h4>82</h4>
-                        <span href="#">赞同</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 社区首页侧栏 签到 -->
-            <div class="discuss-qiandao side-item">2017-03-14 星期二<a href="#" class="qiandao-btn">签到</a></div>
-            <div class="discuss-qiandao discuss-qiandao-had side-item">2017-03-14 星期二<br>连续签到<span class="red"> 8 </span>天<div class="qiandao-btn"><span class="strong">已签到</span><a href="#">查看签到规则</a></div></div>
-
-            <!-- 社区首页侧栏 学习平台 -->
-            <div class="discuss-study side-item side-box" >
-                <div class="title">学习平台</div>
-                <div class="study-con">
-                    <div class="study-item">
-                      <div class="study-img">
-                        <img src="/images/default-avatar.png"/>
-                      </div>
-                      <div class="study-desc">
-                        <h3>花木君-主讲申论<img src="/images/default-avatar.png"></h3>
-                        <a href="#" class="buy-btn">立即购买</a>
-                      </div>
-                    </div>
-                    <div class="study-item">
-                      <div class="study-img">
-                        <img src="/images/default-avatar.png"/>
-                      </div>
-                      <div class="study-desc">
-                        <h3>风暴羚羊-主讲行测<img src="/images/default-avatar.png"></h3>
-                        <a href="#" class="buy-btn">立即购买</a>
-                      </div>
-                    </div>
-                    <div class="study-item">
-                      <div class="study-img">
-                        <img src="/images/default-avatar.png"/>
-                      </div>
-                      <div class="study-desc">
-                        <h3>北楚-主讲面试<img src="/images/default-avatar.png"></h3>
-                        <a href="#" class="buy-btn">立即购买</a>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 社区首页侧栏 步知工具集 -->
-            <div class="discuss-tools side-item side-box">
-                <div class="title">步知工具集</div>
-                <div class="tool-con">
-                    <a class="tool-item tool-item-foucs" href="#"><i class="icon icon-dayin"></i>打印社<span class="detail-txt">(18本公益资料)</span></a>
-                    <a class="tool-item" href="#"><i class="icon icon-live"></i>直播间<span class="detail-txt detail-txt-red">(花木君直播中)</span></a>
-                    <a class="tool-item" href="#"><i class="icon icon-sl"></i>申论批改<span class="detail-txt">(第12期进行中)</span></a>
-                </div>
-            </div>
-
-            <!-- 社区首页侧栏 申论批改倒计时 -->
-            <div class="discuss-countdown side-item side-box">
-                <div class="title">申论批改倒计时</div>
-                <div class="countdown-con">
-                    <div class="countdown clearfix">
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">时</span>
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">分</span>
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">秒</span>
-                    </div>
-                </div>
-                <p class="had-num">批改名额： 15</p>
-                <a href="#" class="countdown-btn ">申请作答</a>
-            </div>
-
-            <div class="discuss-countdown side-item side-box">
-                <div class="title">申论批改倒计时</div>
-                <div class="countdown-con">
-                    <div class="countdown clearfix">
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">时</span>
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">分</span>
-                      <span class="num num-1">0</span>
-                      <span class="num">9</span>
-                      <span class="txt">秒</span>
-                    </div>
-                </div>
-                <p class="had-num">批改名额： 15</p>
-                <a href="#" class="countdown-btn countdown-btn-can">申请作答</a>
-            </div>
-
-            <!-- 社区首页侧栏 热门话题 -->
-            <div class="discuss-topic side-item side-box">
-              <div class="title">热门话题</div>
-              <div class="topic-con">
-                <ul>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                  <li class="topic-item"><a href="#">#省考成绩#</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- 社区首页侧栏 文章推荐选项卡 -->
-            <div class="discuss-article side-item side-box">
-                <div class="tab-title">
-                  <ul>
-                    <li class="tab-title-item"><a href="#">推荐好文</a></li>
-                    <li class="tab-title-divider"></li>
-                    <li class="tab-title-item"><a href="#">鱼塘</a></li>
-                    <li class="tab-title-divider"></li>
-                    <li class="tab-title-item"><a href="#">上岸分享</a></li>
-                  </ul>
-                </div>
-                <div class="tab-article-con">
-                    <ul>
-                      <li class="tab-article-item">
-                        <ul class="tab-article-container">
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="tab-article-item" style="display:none;">
-                        <ul class="tab-article-container">
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                          <li class="article-detail article-detail-last">
-                            <a href="#">
-                              <h3><i class="point"></i>30天冲刺申论这样学！</h3>
-                              <p>70分+比较靠谱—换个角度来讲申论70+，才有希望和可能上岸</p>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-      </div>
+    </div>
+    <!-- 右侧栏 -->
+    <div class="ask-side">
+      <bz-userinfo></bz-userinfo>
+      <bz-course></bz-course>
+      <bz-tools></bz-tools>
+      <bz-topic></bz-topic>
+    </div>
+</div>
 </template>
 <script>
- export default {
-    // validate ({ params }) {
-    //     return /^\d+$/.test(params.id)
-    // }
- }
+import BzUserinfo from "~/components/sider/userinfo"
+import BzCourse from "~/components/sider/course"
+import BzTools from "~/components/sider/tools"
+import BzTopic from "~/components/sider/topic"
+export default {
+  // validate ({ params }) {
+  //     return /^\d+$/.test(params.id)
+  // }
+   head() {
+    return {
+      title: `步知公考社区 - 最具品质的公务员考试论坛`
+    }
+  },
+  components: {
+    BzUserinfo,
+    BzCourse,
+    BzTools,
+    BzTopic
+  }
+}
 </script>
 <style lang="less" scoped>
+.article-wrapper{
+  float: left;
+  width: 730px;
+  min-height: 200px;
+}
+.ask-side {
+  float: right;
+  width: 250px;
+}
 .discuss-detail .dd-post,.discuss-detail .dd-reply{position: relative; margin-bottom: 20px; border: 2px solid #d9d9d9; border-radius: 4px; background: #fff;}
 .dd-post .dd-post-title{padding: 0 19px; border-bottom:1px solid #d9d9d9; }
 .dd-post .dd-post-title h3{height: 60px; line-height: 60px; font-size: 20px; font-weight: bold; color: #333;}
@@ -544,6 +476,8 @@
 .dd-post .dd-post-content{padding: 0 19px; padding-top: 10px; }
 .dd-post .dd-post-content .dd-good-btn{display: block; margin:54px auto 30px; width: 106px; height: 30px; text-align: center; line-height: 30px; border:2px solid #c64446; border-radius: 4px; background: #eb5255; font-size: 14px; color: #fff;}
 .dd-post .dd-post-content .dd-good-btn:hover{background: #c64446}
+.dd-post-content-area p{font-size: 15px;line-height: 32px;letter-spacing: 1px;text-align: justify;color: #262626; overflow: hidden;}
+.dd-post-content-area p img{max-width: 100%}
 .dd-post .dd-good-list{padding-left: 8px; padding-bottom: 12px;}
 .dd-post-content .good-list-item{float: left; margin-right: 8px; margin-bottom: 10px; width: 26px; height: 26px; border-radius: 50%; overflow: hidden; }
 .dd-post-content .good-list-item img{width: 26PX; height: 26PX;}
@@ -557,7 +491,7 @@
 .dd-post-label dd{float: left; margin-right: 6px; }
 .dd-post-label dd a{display: inline-block;padding: 0 6px;color: #225599;background-color: #eff6fa;height: 24px;text-align: center;line-height: 24px;border-radius: 100px;min-width: 70px;box-shadow: 0px 0px 2px 0px rgba(53, 107, 152, 0.3);font-size: 14px;}
 .dd-post-label dd a:hover{background-color: #225599;color: #fff;}
-.dd-post .dd-post-tag{position: absolute; top: 0; left: 0;width: 60px; height: 60px; /*background: url(../images/pu-bbs.png) no-repeat;*/ background-position: -49px -100px;}
+.dd-post .dd-post-tag{position: absolute; top: 0; left: 0;width: 60px; height: 60px; background: url("~assets/images/pu-bbs.png") no-repeat; background-position: -49px -100px;}
 .dd-reply{padding: 0 14px;}
 .dd-reply .reply-topbar{height: 52px; line-height: 52px; border-bottom: 1px solid #d9d9d9}
 .dd-reply .reply-topbar .text-area{padding-left: 6px;  }
@@ -584,7 +518,7 @@
 .reply-list-item .reply-avatar .reply-avatar-con{position: relative; width: 50px; height: 50px; }
 .reply-list-item .reply-avatar .reply-avatar-con .avatar-detail{top: 60px;}
 .reply-list-item .reply-avatar .reply-avatar-con img.avatar-pic{width: 50px; height: 50px; border-radius: 50%;}
-.reply-avatar .reply-avatar-con .score{position: absolute; left: 50%; margin-left: -23px; bottom: -10px; width: 42px; height: 14px; line-height: 14px; text-align: center; border: 2px solid #c64446; background: #eb5255; font-size: 10px; color: #fff; border-radius: 7px;}
+.reply-avatar .reply-avatar-con .score{white-space:nowrap;position: absolute; left: 50%; margin-left: -23px; bottom: -10px; width: 42px; height: 14px; line-height: 14px; text-align: center; border: 2px solid #c64446; background: #eb5255; font-size: 10px; color: #fff; border-radius: 7px;}
 .reply-avatar .reply-avatar-con .score-blue{background: #2e96e7; border-color: #387aad;}
 .reply-list-item .reply-text .reply-name{font-size: 14px; margin-bottom: 8px;}
 .reply-list-item .reply-text .reply-name a{ color: #2996eb;}
@@ -595,7 +529,7 @@
 .reply-list-item .reply-tool .zan-btn{float: left; margin-right: 15px; width: 64px; height: 34px; text-align: center; line-height: 34px; background: #e9f4fd; border-radius: 4px; font-size: 14px; color: #1879c5;}
 .reply-list-item .reply-tool .click-list{float: left; position: relative;}
 .reply-list-item .click-list .click-item{margin-right: 10px; line-height: 34px; font-size: 12px; color: #888888; cursor: pointer;}
-.reply-list-item .click-list .click-icon{display: inline-block; /*background: url(../images/click-icon.png) no-repeat;*/ vertical-align: middle; position: relative; top: -2px; margin-right: 3px;}
+.reply-list-item .click-list .click-icon{display: inline-block; background: url("~assets/images/click-icon.png") no-repeat; vertical-align: middle; position: relative; top: -2px; margin-right: 3px;}
 .reply-list-item .click-list .click-reply{width: 14px; height: 14px; background-position: 0 0;}
 .reply-list-item .click-list .click-share{width: 16px; height: 16px; background-position: 0 -19px;}
 .reply-list-item .click-list .click-report{width: 14px; height: 16px; background-position: 0 -40px;}
@@ -606,7 +540,7 @@
 .click-list .invite-box .title .search-area{float: right; position: relative;height: 22px;line-height: 22px;margin-top: 10px;}
 .click-list .invite-box .title .search-area .search-input{ width: 126px; padding-right: 38px; height: 22px; line-height: 22px; border: 1px solid #d9d9d9; border-radius: 4px; text-indent: 26px; font-size: 12px; background: #edf0f5;}
 .click-list .invite-box .title .search-btn{ position: absolute; top: 1px; right: 1px; width: 38px; height: 22px; line-height: 22px; text-align: center;}
-.click-list .invite-box .title .search-btn .search-icon{display: inline-block; width: 16px; height: 16px;/* background: url(../images/discuss-header.png) no-repeat 0 -24px;*/ vertical-align: sub;}
+.click-list .invite-box .title .search-btn .search-icon{display: inline-block; width: 16px; height: 16px; background: url("~assets/images/discuss-header.png") no-repeat 0 -24px; vertical-align: sub;}
 .click-list .invite-box .invite-list{padding-top: 10px; height: 174px; overflow-y: auto;}
 .click-list .invite-box .invite-list .invite-item{float: left; margin-right: 10px; height: 32px; line-height: 32px; width: 115px; border: 2px solid #d9d9d9; border-radius: 4px; margin-bottom: 10px; background: #fff; font-size: 12px; color: #2996eb; }
 .click-list .invite-item:hover,.click-list .invite-item-choose{border-color: #00a0e9!important; background: #f1f5ff!important}
@@ -642,10 +576,45 @@
 .dd-reply .reply-load-more{line-height: 56px; height: 56px; text-align: center; line-height: 56px;}
 .dd-reply .reply-load-more a{display: block;height: 36px; line-height: 36px; font-size: 12px; color: #999; margin-bottom: 0;}
 .dd-reply .reply-load-more a:hover{color: #2996eb;}
-
 .dd-post .reply-editer .reply-editer-con{margin-bottom: 10px;}
 .reply-editer .editor-btn{float: right; width: 96px; height: 30px; text-align: center; line-height: 30px;border: 2px solid #1b76bd; background: #2996eb; color: #FFF; font-size: 14px; border-radius: 4px; margin-top: 20px;}
 .reply-empty{height: 300px; padding-top: 70px; text-align: center;}
-.reply-empty p{margin:31px 0 0 0;font-size: 16px;color: #aaa;}
+.reply-empty p{margin: 31px 0 0 0;font-size: 16px;font-weight: bold;color: #aaa;}
 
+.dd-review-toolbar{position: relative; padding-top: 42px; padding-bottom: 18px; text-align: center; font-size: 12px; color: #666;}
+.dd-review-toolbar .review-toolbar-item{display: inline-block; position: relative;;}
+.dd-review-toolbar .review-toolbar-item:hover{color: #2996eb;}
+.dd-review-toolbar .review-toolbar-item .share{display:inline-block; width: 13px; height:13px; background: url(~assets/images/share-s.png) no-repeat;margin-right: 4px;vertical-align: middle;position: relative;top: -2px;}
+.dd-review-toolbar .review-toolbar-item:hover .share{background-position: 0 -13px;}
+.dd-review-toolbar .review-toolbar-item .collect{display:inline-block; width: 14px; height:13px; background: url(~assets/images/collect-s.png) no-repeat;margin-right: 4px;vertical-align: middle;position: relative;top: -2px;}
+.dd-review-toolbar .review-toolbar-item:hover .collect{background-position: 0 -13px;}
+.dd-review-toolbar .divider{display: inline-block; width: 0; height: 14px; line-height: 12px;border-left: 1px solid #b6b6b6; vertical-align: middle; position: relative; top: -1px;}
+
+.detail-icon{display: inline-block; background: url(~assets/images/detail-icon.png) no-repeat;}
+.red-zan-icon{width: 20px; height: 21px; background-position: 0 -64px; vertical-align: middle; position: relative; top: -2px; margin-right: 4px;}
+.white-discuss-icon{width: 20px; height: 17px; background-position: 0 -43px; vertical-align: middle; position: relative; top: -1px; margin-right: 4px;}
+.star-icon{width: 12px; height: 12px;  background-position: 0 -90px; position: relative; top: 1px; }
+.zan-btn .dian-zan-btn{width: 15px; height: 15px;  background-position: 0 0; position: relative; top: 1px; margin-right: 10px;}
+.reply-list-item .reply-tool .zan-btn:hover{background: #1879c5; color: #fff;}
+.zan-btn:hover .dian-zan-btn{background-position: 0 -22px;}
+
+
+.loading-more{margin: 20px 0 42px; display: block; height: 32px; line-height:32px; border:2px solid #d9d9d9; background:#f1f5ff; border-radius: 4px; text-align: center; color: #666; font-size: 12px;}
+.loading-more:hover{color: #2996eb}
+
+/*主题样式*/
+blockquote{
+      margin: 30px 0 0;
+      padding: 23px 20px 23px 55px;
+      background: #fafafa url('http://ask.public.midasjoy.com/Public/common/js/ueditor/themes/default/images/blockquoteup.png') 18px 20px no-repeat ;
+      border: 1px solid #f3f3f3;
+      line-height: 28px;
+}
+blockquote p{
+    padding-right:28px;
+}
+blockquote p:last-child{
+    padding-bottom: 10px;
+    background: #fafafa url('http://ask.public.midasjoy.com/Public/common/js/ueditor/themes/default/images/blockquotedown.png') 100% 100% no-repeat
+} 
 </style>

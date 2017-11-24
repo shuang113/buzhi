@@ -9,13 +9,7 @@
             <bz-listview :datalist="datalist" :isTabMenu="isTabMenu" @goto="gotoIndex"></bz-listview>
         </div>
         <!-- 右侧栏 -->
-        <div class="ask-side">
-        <bz-userinfo v-show="!userinfo.length" :user="userinfo"></bz-userinfo>
-        <bz-course></bz-course>
-        <bz-tools></bz-tools>
-        <bz-correct></bz-correct>
-        <bz-read-more></bz-read-more>
-        </div>
+        <bz-rightside></bz-rightside>
     </div>
 </template>
 <script>
@@ -23,12 +17,8 @@ import axios from "axios"
 import BzForum from "~/components/common/forum"
 import BzForumAd from "~/components/common/forum/ad"
 import BzListview from "~/components/common/listview"
+import BzRightside from "~/components/common/right-side"
 import {STATUS_OK, getForumCate, getForumList, getUserInfo, getRecommends} from "~/plugins/api"
-import BzUserinfo from "~/components/sider/side-info"
-import BzCourse from "~/components/sider/course"
-import BzTools from "~/components/sider/tools"
-import BzCorrect from "~/components/sider/correct"
-import BzReadMore from "~/components/sider/readmore"
 export default {
   head() {
     return {
@@ -60,11 +50,7 @@ export default {
     BzForum,
     BzForumAd,
     BzListview,
-    BzUserinfo,
-    BzCourse,
-    BzTools,
-    BzCorrect,
-    BzReadMore
+    BzRightside
   },
   methods: {
     _getUserInfo() {
