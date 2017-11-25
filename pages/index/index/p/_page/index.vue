@@ -12,7 +12,7 @@
             <div class="g-mask" v-show="isShowPop">
                 <div class="auto-recommended g-content">
                 <span class="close" @click="isShowPop = !isShowPop"></span>
-                <h3 class="title">Hi~亲爱的<span class="red-txt">用户名占位</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
+                <h3 class="title">Hi~亲爱的<span class="red-txt">{{userinfo.nickname}}</span>欢迎加入步知公考社区，为您推荐如下小伙伴：</h3>
                 <div class="con-list">
                     <ul class="clearfix">
                     <li class="recommended-item clearfix" v-for="(item,index) in recommends" :key="index">
@@ -49,6 +49,8 @@ import BzListview from "~/components/common/listview"
 import BzRightside from "~/components/common/right-side"
 import {STATUS_OK, getForumCate, getForumList, getUserInfo, getRecommends} from "~/plugins/api"
 import {setToken} from "~/plugins/utils"
+
+import {mapState} from 'vuex'
 export default {
    head() {
     return {
@@ -62,16 +64,17 @@ export default {
         axios.spread(function(applist) {
           return {
             datalist: applist.data
-          };
-        })
-      )
-      .catch(error => console.log(error))
+          }
+        }))
+      .catch(err => {
+          error({ statusCode: 400, message: err })
+      })
   },
   data() {
     return {
       headTitle:"",
       datalist:{},      //全部帖子列表数据
-      isShowPop: false,  //是否显示关注弹窗
+      isShowPop: true,  //是否显示关注弹窗
       recommends:[],    //推荐关注列表
       isTabMenu:true    //listview是否有tab菜单
     }
@@ -81,6 +84,9 @@ export default {
     BzForumAd,
     BzListview,
     BzRightside
+  },
+  computed: {
+    ...mapState(['userinfo'])
   },
   methods: {
     // _getUserInfo() {
@@ -112,7 +118,7 @@ export default {
       this._getRecommends()
     })
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "~assets/style/variable.less";

@@ -2,7 +2,7 @@
 <div class="hd-block content-hd">
     <div class="header">版块</div>
     <ul class="module-row clearfix">
-        <li v-for="(item,index) in forumlist" 
+        <li v-for="(item,index) in $store.state.forumlist" 
         :key="index" 
         v-if="index < 8" 
         :class="{active:item.id == fid}">
@@ -14,18 +14,29 @@
 <script>
 import axios from "axios"
 import {STATUS_OK, getForumCate} from "~/plugins/api"
-import {mapGetters,mapState} from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 export default {
     data () {
         return {
-            forumlist:{},
             fid:this.$route.params.id || "0"
         }
     },
+    // fetch ({ store, params }) {
+    //     return axios.get('http://ask.gk.buzhi.com/api?router=thread.forum')
+    //     .then((res) => {
+    //         store.commit('GET_FORUM', res.data)
+    //     })
+    // },
+    computed: {
+      ...mapState(['forumlist'])
+    },
     methods: {
+        ...mapMutations({
+            getForum:'GET_FORUM'
+        }),
         _getForumCate(){
             getForumCate().then(res=>{
-                this.forumlist = res.data
+                this.getForum(res.data)
             })
         },
         // 点击版块

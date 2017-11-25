@@ -16,7 +16,8 @@
     "axios": "^0.17.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^4.4.0",

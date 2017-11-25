@@ -36,7 +36,7 @@
                 <img src="/images/default-avatar.png">
                 <span class="num-label">121</span>
             </div>
-            <span class="avatar-name">{{userinfo.name}}<i class="icon-daosanjiao"></i></span>
+            <span class="avatar-name">{{userinfo.nickname}}<i class="icon-daosanjiao"></i></span>
             <transition name="slide-right">
               <ul class="avater-menu" v-show="isShow">
                   <li><a href="#" target="_blank"><i class="iconfont icon-xinxi"></i>消息系统<span>(2)</span></a></li>
@@ -49,18 +49,29 @@
     </div>
 </template>
 <script>
+import {STATUS_OK, getUserInfo } from "~/plugins/api"
+import {mapState,mapMutations} from 'vuex'
 export default {
   data() {
     return {
       isShow: false,
-      isShowSelf:false,
-      userinfo:{
-        "name":"hes",
-        "client_id":"152346"
-      }
+      isShowSelf:false
     }
   },
-  methods:{
+  methods: {
+    ...mapMutations({
+      setUserinfo:'GET_USERINFO'
+    })
+  },
+  computed: {
+    ...mapState(['userinfo'])
+  },
+  created () {
+    this.$nextTick(()=>{
+      getUserInfo().then(res=>{
+        this.setUserinfo(res.data)
+      })
+    })
   }
 };
 </script>

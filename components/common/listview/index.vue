@@ -15,7 +15,8 @@
         </div>
         <!-- 社区首页内容 帖子列表 -->
         <div class="bd-content">
-            <div class="post-item" v-for="(item,index) in datalist.list" :key="index" ref="postItem">
+            <div v-if="!datalist.list" style="text-align:center;padding:20px 0;">暂无数据...</div>
+            <div class="post-item" v-for="(item,index) in datalist.list" :key="index" ref="postItem" v-else>
                 <div class="post-avatar" @mouseenter="showUser(item.user_id,index)" @mouseleave="currentItem = 1000">
                   <div class="avatar-img">
                       <img :src="changeImg(item.img)">
@@ -81,7 +82,7 @@
                     <p class="desc" v-if="item.desc">{{item.desc}}</p>
                     <p class="detail">
                       <span class="author">{{item.cnname}}
-                        <img :src="changeImg(i.course_ico)" :alt="i.course_name" v-for="(i,k) in item.vip_ico">
+                        <img :src="changeImg(i.course_ico)" :alt="i.course_name" v-for="(i,k) in item.vip_ico" :key="k">
                         <!-- <img src="~assets/images/label-teacher.png" class="label"> -->
                       </span>
                       <span class="time">{{item.zan_num}}人赞同 · {{item.post_num}}个回复 · {{item.hit_num}}次浏览 · {{item.created_time}}</span>

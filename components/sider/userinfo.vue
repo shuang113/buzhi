@@ -1,6 +1,6 @@
 <template>
     <!-- 右侧边栏 头像 -->
-    <div class="sider-avatar sider-item" v-show="typeof(userinfo) !== '{}'">
+    <div class="sider-avatar sider-item">
         <div class="avater-detail">
             <div class="avatar-header">
                 <div class="avatar-pic">
@@ -51,25 +51,11 @@
 </template>
 <script>
 import axios from "axios"
-import {STATUS_OK, getUserInfo } from "~/plugins/api"
+import {mapState} from 'vuex'
+
 export default {
-  data () {
-    return {
-      signTime:"",
-      userinfo:{}
-    }
-  },
-  async asyncData({ params, error }) {
-    return axios
-      .all([ getUserInfo() ])
-      .then(
-        axios.spread(function(user) {
-          return {
-            userinfo: user.data
-          };
-        })
-      )
-      .catch(error => console.log(error))
+  computed:{
+      ...mapState(['userinfo']) 
   },
   methods: {
     changeImg(url){

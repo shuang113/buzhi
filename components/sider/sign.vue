@@ -15,7 +15,7 @@
           <a href="/sign/top">签到排行榜</a>
         </div>
         <transition name="scale-opacity">
-          <div class="sign-dialog" v-show="isSign">+1</div>
+          <!-- <div class="sign-dialog" v-show="isSign">+1</div> -->
         </transition>
       </div>
     <!-- 签到规则弹窗 -->
